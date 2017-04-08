@@ -1,5 +1,5 @@
 def reverseString(data):
-        res=""
-        for i in data:
-                res = i + res;
-        print(res);
+  res=""
+  for i in data:
+    res = i + res;
+  print(res);
