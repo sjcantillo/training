@@ -29,7 +29,7 @@
     Y una pista que dice que debo corregir lo necesario
     Cuando analizo las imágenes
     Y me doy cuenta que son jeroglíficos egipcios
-	Y busco la equivalencia de cada imagen a letras del idioma ingles
+    Y busco la equivalencia de cada imagen a letras del idioma ingles
     Cuando hago la traducción respectiva
     Y encuentro que las dos primeras palabras son mision troja
     Y la última puede ser ul o wl
