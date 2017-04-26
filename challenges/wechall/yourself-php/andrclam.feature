@@ -1,15 +1,17 @@
-Caracter?stica Resolver reto Yourself PHP
+#language: es
+
+Característica: Resolver reto Yourself PHP
   Con codigo Yourself PHP
   Del sitio wechall.net
   De la categoria Exploit,PHP,XSS
   Con mi usuario andrclam
   
-  Antecedentes
+  Antecedentes:
     Dado estoy registrado en el sitio wechall.net
     Y tengo el sistema operativo Windows versi?n 6.3
     Y tengo acceso a internet
     
-  Escenario Primer intento fallido
+  Escenario: Primer intento fallido
     Dado una pagina web vulnerable a xss exploit
     Y un script PHP al que se debe insertar un codigo Javascript
     Y generar un alert a partir de dicho codigo
@@ -20,7 +22,7 @@ Caracter?stica Resolver reto Yourself PHP
     Pero concluyo que falta agregar algo en la url
     Y finalmiente funcione el script
 
-  Escenario Soluci?n exitosa
+  Escenario: Solución exitosa
     Dado el escenario anterior fallido
     Cuando realizo otra investigacion
     Y valido nuevamente sintaxis de insercion del script
