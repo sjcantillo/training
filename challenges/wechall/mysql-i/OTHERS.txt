@@ -5,3 +5,4 @@ https://raw.githubusercontent.com/lc4t/OtherFiles/master/md/WeChall.md
 http://sp4hack.blogspot.com.co/2012/10/we-chall-training-mysql-i.html
 http://www.nowhere.co.jp/blog/archives/20150131-184542.html
 https://silnex.kro.kr/wordpress/2016/11/22/wechalltraining-mysql-i/
+http://wps2015.org/drops/drops/wechall%20mysql%E5%85%B3%E5%8D%A1%E9%A2%98%E8%A7%A3.html
