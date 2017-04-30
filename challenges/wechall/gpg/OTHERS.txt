@@ -1,2 +1,3 @@
 https://raw.githubusercontent.com/p1o2p3u1/WeChall/master/Training/Crypto_GPG.md
 https://lc4t.me/wechall/
+https://github.com/p1o2p3u1/WeChall/blob/master/Training/Crypto_GPG.md
