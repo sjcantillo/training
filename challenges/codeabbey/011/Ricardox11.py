@@ -1,5 +1,3 @@
-# sumadigitos.py
-# sumar entrada de datos digitos
 n = 0
 resultadot = ""
 n = int(raw_input("Por favor digitar N: ")) # lee N valores a procesar
