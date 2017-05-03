@@ -1,4 +1,4 @@
-# sumadigitos.py 
+# sumadigitos.py
 # sumar entrada de datos digitos
 n = 0
 resultadot = ""
