@@ -1,8 +1,8 @@
 # sumadigitos.py
 # sumar entrada de datos digitos
-rangco = 0
-resultado2 = ""
+
 rangco = int(raw_input("Por favor digitar N: "))  # lee N valores a procesar
+resultado2 = ""
 
 for y in range(rangco):
     valores = raw_input("Dato %i:" % y)  # captura valores1
