@@ -1,10 +1,10 @@
 # sumadigitos.py
 # sumar entrada de datos digitos
-nconta = 0
-resulat = ""
-nconta = int(raw_input("Por favor digitar N: "))  # lee N valores a procesar
+rangco = 0
+resultado2 = ""
+rangco = int(raw_input("Por favor digitar N: "))  # lee N valores a procesar
 
-for y in range(nconta):
+for y in range(rangco):
     valores = raw_input("Dato %i:" % y)  # captura valores1
     valores = valores.split(" ")  # separa en cadena
     valor1 = int(valores[0])  # lee cada valor
@@ -21,6 +21,6 @@ for y in range(nconta):
         temporal = (temporal / 10)  # calcula siguiente numero
         resultado = resultado + temporaldiv  # suma cada valor
 
-    resulat = resulat + " " + str(resultado)  # concatena resultados
+    resultado2 = resultado2 + " " + str(resultado)  # concatena resultados
 
-print resulat.strip()  # imprime resultado total
+print resultado2.strip()  # imprime resultado total
