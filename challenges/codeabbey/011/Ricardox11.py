@@ -5,7 +5,7 @@ resulat = ""
 nconta = int(raw_input("Por favor digitar N: "))  # lee N valores a procesar
 
 for y in range(nconta):
-    valores = raw_input("Dato %i:" % y)  # captura valores
+    valores = raw_input("Dato %i:" % y)  # captura valores1
     valores = valores.split(" ")  # separa en cadena
     valor1 = int(valores[0])  # lee cada valor
     valor2 = int(valores[1])
