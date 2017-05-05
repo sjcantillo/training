@@ -21,7 +21,7 @@ Feature: Solve Bufferoverflows challenge
     Given a buffer overflow exploit in c
     And I know the problem is it doesn't finish obtaining the privileges
     When I do some reading on shell code
-    And I find that sometimes the last part "/bin/sh is in  a separate string
+    And I find that sometimes the last part "/bin/sh" is in  a separate string
 	And sometimes it has double slash "/bin//sh"
     And I edit the line accordingly
     And I get an error message
