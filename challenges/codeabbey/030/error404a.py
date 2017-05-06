@@ -2,7 +2,7 @@
 
 
 def reversestring(data):
-    """Reverse a string."""
+    """Reverse string."""
     res = ""
     for i in data:
         res = i + res
