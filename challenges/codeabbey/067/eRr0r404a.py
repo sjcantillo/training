@@ -1,6 +1,6 @@
 """This function calculate the index of foibonacci number."""
 
-from math import *
+import math
 
 
 def indexfib(data):
