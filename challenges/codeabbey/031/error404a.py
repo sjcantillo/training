@@ -1,9 +1,10 @@
 """This function cuts the n charsfrom the begining of string
-   and put it in the end.
-   input data:
-   2
-   3 forwhomthebelltolls
-   -6 verycomplexnumber"""
+and put it in the end.
+input data:
+2
+3 forwhomthebelltolls
+-6 verycomplexnumber"""
+
 
 def rotatek(data):
     """Rotate n character to the end of string"""
