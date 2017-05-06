@@ -21,4 +21,4 @@ def rotatek(data):
         word = ltmp[1]
         lont = len(word)
         res += word[nuCut:lont] + word[0:nuCut] + " "
-  print res
+    print res
