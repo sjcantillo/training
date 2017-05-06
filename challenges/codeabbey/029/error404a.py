@@ -8,19 +8,19 @@ def sortwithindex(data):
     temp = temp[1].split(" ")
     res = ""
     for i in range(0, repets):
-        temp[i] = [temp[i],(i+1)]
+        temp[i] = [temp[i], (i+1)]
     disorderflg = True
     swapflg = False
     while disorderflg:
         swapflg = False
         for i in range(0, (repets-1)):
-            if int(temp[i+1][0]) < int(temp [i][0]):
+            if int(temp[i+1][0]) < int(temp[i][0]):
                 swapflg = True
-                t = temp[i]
+                tmp = temp[i]
                 temp[i] = temp[i+1]
-                temp[i+1] = t
-        if not(swapflg):
+                temp[i+1] = tmp
+        if not swapflg:
             disorderflg = False
-    for n in temp:
-        res += str(n[1]) + " "
+    for nu in temp:
+        res += str(nu[1]) + " "
     print res
