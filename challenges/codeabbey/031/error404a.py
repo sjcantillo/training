@@ -11,14 +11,13 @@ def rotatek(data):
     temp = data.split("\n")
     res = ""
     ltmp = []
-    ptemp = ""
     lont = 0
-    nuCut = 0
+    nucut = 0
     word = ""
     for i in range(0, int(temp[0])):
         ltmp = temp[i+1].split(" ")
-        nuCut = int(t[0])
+        nucut = int(ltmp[0])
         word = ltmp[1]
         lont = len(word)
-        res += word[nuCut:lont] + word[0:nuCut] + " "
+        res += word[nucut:lont] + word[0:nucut] + " "
     print res
