@@ -3,6 +3,7 @@ and return the original index"""
 
 
 def sortwithindex(data):
+    """Sort string in non-decrease order"""
     temp = data.split("\n")
     repets = int(temp[0])
     temp = temp[1].split(" ")
@@ -21,6 +22,6 @@ def sortwithindex(data):
                 temp[i+1] = tmp
         if not swapflg:
             disorderflg = False
-    for nu in temp:
-        res += str(nu[1]) + " "
+    for idx in temp:
+        res += str(idx[1]) + " "
     print res
