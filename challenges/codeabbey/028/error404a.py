@@ -1,7 +1,7 @@
 """This function calculate the body mass index."""
 
 
-def bmi(data):
+def fbmi(data):
     """Calculate the bmi."""
     temp = data.split("\n")
     res = ""
