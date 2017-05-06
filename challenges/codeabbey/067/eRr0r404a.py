@@ -1,8 +1,9 @@
 """This function calculate the index of foibonacci number."""
 
-import math
+from math import *
 
-def indexFib(data):
+
+def indexfib(data):
     """Calculate the index of foibonacci number."""
     tmp = data.split("\n")
     phi = (1 + math.sqrt(5)) / 2
