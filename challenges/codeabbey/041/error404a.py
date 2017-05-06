@@ -1,5 +1,6 @@
 """This function calculate the median of three numbers."""
 
+
 def media(data):
     """Calculate the median"""
     tmp = data.split("\n")
