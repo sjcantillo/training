@@ -2,7 +2,7 @@
 
 
 def media(data):
-    """Calculate the median"""
+    """Calculate the median of three numbers"""
     tmp = data.split("\n")
     ltemp = []
     res = ""
