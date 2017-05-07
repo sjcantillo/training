@@ -1,12 +1,12 @@
-# modtime.rb
-respuesta = ""
-puts "Por favor ingresar N: " # captura n
+
+respuesta = ''
+puts 'Por favor ingresar N: ' # captura n
 n = gets.chomp.to_i
 
 for x in (1..n)
   puts "Por favor ingresar dato #{x}"
   time = gets.chomp # captura datos
-  fecha = time.split(" ") # convierte a arreglo
+  fecha = time.split(' ') # convierte a arreglo
 
   dia1 = fecha[0].to_i # separa datos
   hora1 = fecha[1].to_i
@@ -19,15 +19,15 @@ for x in (1..n)
 
   fecha_seg1 = (dia1 * 86400) + (hora1 * 3600) + (min1 * 60) + seg1
   fecha_seg2 = (dia2 * 86400) + (hora2 * 3600) + (min2 * 60) + seg2
-  
+
   fecha_dif_seg = (fecha_seg2 - fecha_seg1) # calcula diferencia
 
-  dian = (fecha_dif_seg / 86400) # calcula dia 
+  dian = (fecha_dif_seg / 86400) # calcula dia
   horan = ((fecha_dif_seg % 86400) / 3600) # calcula hora
   minn  = (((fecha_dif_seg % 86400) % 3600) / 60) # calcula minutos
   segn = (((fecha_dif_seg % 86400) % 3600) % 60) # calcula segundos
 
-  respuesta = respuesta + "(#{dian} #{horan} #{minn} #{segn}) "
+  respuesta += "(#{dian} #{horan} #{minn} #{segn}) "
 end
 
 puts respuesta
