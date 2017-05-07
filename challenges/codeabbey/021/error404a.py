@@ -10,11 +10,11 @@ def arraycounters(data):
     counter = []
     res = ""
     index = 0
-    for i in range(0, int(limits[1])):
+    for idx in range(0, int(limits[1])):
         counter.append(0)
-    for x in range(0, int(limits[0])):
-        index = int(datos[x]) - 1
+    for idx1 in range(0, int(limits[0])):
+        index = int(datos[idx1]) - 1
         counter[index] += 1
-    for p in counter:
-        res += str(p) + " "
+    for idx2 in counter:
+        res += str(idx2) + " "
     print res
