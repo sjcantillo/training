@@ -8,8 +8,8 @@ def numofvowels(data):
     cont = 0
     res = ""
     vowels = "a,o,u,i,e,y"
-    for i in range(0, int(temp[0])):
-        for letter in temp[i+1]:
+    for idx in range(0, int(temp[0])):
+        for letter in temp[idx+1]:
             if letter in vowels:
                 cont += 1
         res += str(cont) + " "
