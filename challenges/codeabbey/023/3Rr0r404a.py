@@ -1,16 +1,22 @@
+"""This function sort an array and return
+ the number of performed swaps and checksum 
+ of the array"""
+
+
 def bubbleInArray(data):
-  temp = data.split(" ");
-  temp.pop(len(temp)-1);
-  disorderFlg = True;
-  contSwap = 0;
-  arrayHash = 0;
-  for i in range(0,(len(temp)-1)):
-    if(int(temp[i+1]) < int(temp [i])):
-      swapFlg = True;
-      contSwap += 1;
-      t = temp[i];
-      temp[i] = temp[i+1];
-      temp[i+1] = t;
-  for num in temp:
-    arrayHash = ((arrayHash + int(num))*113) % 10000007;
-  print(str(contSwap) + " " + str(arrayHash));
+    """Perform the sort"""
+    temp = data.split(" ")
+    temp.pop(len(temp) - 1)
+    disorderflg = True
+    contswap = 0
+    arrayhash = 0
+    for i in range(0, (len(temp) - 1)):
+      if int(temp[i+1]) < int(temp[i]):
+          swapflg = True
+          contswap += 1
+          tmp = temp[i]
+          temp[i] = temp[i+1]
+          temp[i+1] = tmp
+    for num in temp:
+        arrayhash = ((arrayhash + int(num)) * 113) % 10000007
+    print str(contswap) + " " + str(arrayhash)
