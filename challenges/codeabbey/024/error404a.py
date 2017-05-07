@@ -4,8 +4,7 @@ values to come to the loop."""
 
 
 def randomgenerator(data):
-    """Calculate the number of iterations until
-    initial values apear again"""
+    """Generate random numbers"""
     temp = data.split("\n")
     numsec = 0
     sec = []
