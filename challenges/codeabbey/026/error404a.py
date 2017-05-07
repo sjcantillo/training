@@ -19,7 +19,7 @@ def gcd(data):
         while varb != 0:
             tmp = varb
             varb = vara % varb
-            vara = tmp;
+            vara = tmp
         lcm = (int(ltmp[0]) * int(ltmp[1])) // vara
         res += "(" + str(vara) + " " + str(lcm) + ") "
     print res
