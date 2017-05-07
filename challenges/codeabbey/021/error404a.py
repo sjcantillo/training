@@ -11,6 +11,7 @@ def arraycounters(data):
     res = ""
     index = 0
     for idx in range(0, int(limits[1])):
+        idx = idx
         counter.append(0)
     for idx1 in range(0, int(limits[0])):
         index = int(datos[idx1]) - 1
