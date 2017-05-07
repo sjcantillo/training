@@ -6,10 +6,10 @@
 def bubbleinarray(data):
     """Perform the sort"""
     temp = data.split(" ")
-    temp.pop(len(temp) - 1)
+    temp.pop(len(temp)-1)
     contswap = 0
     arrayhash = 0
-    for i in range(0, (len(temp) - 1)):
+    for i in range(0, (len(temp)-1)):
         if int(temp[i+1]) < int(temp[i]):
             contswap += 1
             tmp = temp[i]
