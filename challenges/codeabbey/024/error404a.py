@@ -18,13 +18,13 @@ def randomGenerator(data):
         loopflg = True
         numsec = int(seeds[i])
         sec.append(numsec)
-        while(loopflg):
+        while loopflg:
             numsec = int(str(pow(numsec, 2)).zfill(8)[2:6])
-            if (numsec in sec):
-              loopflg = False
+            if  numsec in sec:
+                loopflg = False
             else:
-              sec.append(numsec)
-              cont += 1
+                sec.append(numsec)
+                cont += 1
         res += str(cont) + " "
         sec = []
     print res
