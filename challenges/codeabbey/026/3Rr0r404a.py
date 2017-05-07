@@ -17,7 +17,7 @@ def gcd(data):
         else:
             vara = int(ltmp[1])
             varb = int(ltmp[0])
-        while b != 0:
+        while varb != 0:
             tmp = varb
             varb = vara % varb
             vara = tmp;
