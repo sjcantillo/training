@@ -21,4 +21,4 @@ for y in range(RANGC):
         
     RESUL2 = RESUL2 + " " + str(resultado)  # concatena resultados
 
-print RESUL2.strip() #  imprime resultado totaL
+print RESUL2.strip()
