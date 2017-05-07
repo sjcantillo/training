@@ -1,6 +1,6 @@
 """This function sort an array and return
- the number of performed swaps and checksum 
- of the array"""
+the number of performed swaps and checksum 
+of the array"""
 
 
 def bubbleinarray(data):
