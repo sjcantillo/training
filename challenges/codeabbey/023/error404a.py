@@ -1,5 +1,5 @@
 """This function sort an array and return
-the number of performed swaps and checksum 
+the number of performed swaps and checksum
 of the array"""
 
 
@@ -16,5 +16,5 @@ def bubbleinarray(data):
             temp[i] = temp[i+1]
             temp[i+1] = tmp
     for num in temp:
-        arrayhash = ((arrayhash + int(num)) * 113) % 10000007
+        arrayhash = ((arrayhash+int(num))*113)%10000007
     print str(contswap) + " " + str(arrayhash)
