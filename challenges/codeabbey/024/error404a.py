@@ -1,5 +1,5 @@
 """This function generates a random numbers and return
-the number of iterations for sequences with such initial 
+the number of iterations for sequences with such initial
 values to come to the loop."""
 
 
