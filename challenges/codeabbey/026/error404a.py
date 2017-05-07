@@ -2,7 +2,6 @@
 and Least Common Multiple"""
 
 
-
 def gcd(data):
     """Find the gcd and lcm"""
     temp = data.split("\n")
