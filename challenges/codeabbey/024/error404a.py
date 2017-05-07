@@ -18,7 +18,7 @@ def randomgenerator(data):
         numsec = int(seeds[i])
         sec.append(numsec)
         while loopflg:
-            numsec = int(str(pow(numsec, 2)).zfill(8)[2:6])
+            numsec = int(str(pow(numsec,2)).zfill(8)[2:6])
             if numsec in sec:
                 loopflg = False
             else:
