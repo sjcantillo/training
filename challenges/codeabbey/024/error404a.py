@@ -3,7 +3,7 @@ the number of iterations for sequences with such initial
 values to come to the loop."""
 
 
-def randomGenerator(data):
+def randomgenerator(data):
     """Calculate the number of iterations until
     initial values apear again"""
     temp = data.split("\n")
@@ -20,7 +20,7 @@ def randomGenerator(data):
         sec.append(numsec)
         while loopflg:
             numsec = int(str(pow(numsec, 2)).zfill(8)[2:6])
-            if  numsec in sec:
+            if numsec in sec:
                 loopflg = False
             else:
                 sec.append(numsec)
