@@ -1,9 +1,9 @@
-
+#!/usr/bin/env ruby
 respuesta = ''
 puts 'Por favor ingresar N: ' # captura n
 n = gets.chomp.to_i
 
-for x in (1..n)
+(1..n).each do |x|
   puts "Por favor ingresar dato #{x}"
   time = gets.chomp # captura datos
   fecha = time.split(' ') # convierte a arreglo
@@ -17,15 +17,15 @@ for x in (1..n)
   min2 = fecha[6].to_i
   seg2 = fecha[7].to_i
 
-  fecha_seg1 = (dia1 * 86400) + (hora1 * 3600) + (min1 * 60) + seg1
-  fecha_seg2 = (dia2 * 86400) + (hora2 * 3600) + (min2 * 60) + seg2
+  fecha_seg1 = (dia1 * 864_00) + (hora1 * 3_600) + (min1 * 60) + seg1
+  fecha_seg2 = (dia2 * 864_00) + (hora2 * 3_600) + (min2 * 60) + seg2
 
   fecha_dif_seg = (fecha_seg2 - fecha_seg1) # calcula diferencia
 
-  dian = (fecha_dif_seg / 86400) # calcula dia
-  horan = ((fecha_dif_seg % 86400) / 3600) # calcula hora
-  minn  = (((fecha_dif_seg % 86400) % 3600) / 60) # calcula minutos
-  segn = (((fecha_dif_seg % 86400) % 3600) % 60) # calcula segundos
+  dian = (fecha_dif_seg / 86_400) # calcula dia
+  horan = ((fecha_dif_seg % 86_400) / 3_600) # calcula hora
+  minn  = (((fecha_dif_seg % 86_400) % 3_600) / 60) # calcula minutos
+  segn = (((fecha_dif_seg % 86_400) % 3_600) % 60) # calcula segundos
 
   respuesta += "(#{dian} #{horan} #{minn} #{segn}) "
 end
