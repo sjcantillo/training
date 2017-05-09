@@ -1,1 +1,2 @@
-https://github.com/fluidsignal/training
+https://gist.github.com/SegFaultAX/3607101
+http://4clojure.clojuregirl.com/
