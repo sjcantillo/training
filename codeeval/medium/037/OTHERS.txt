@@ -1,5 +1,0 @@
-https://raw.githubusercontent.com/elbuo8/codeEval/master/Pangrams.py
-https://raw.githubusercontent.com/einashaddad/codeeval/master/pangrams.py
-https://raw.githubusercontent.com/pascal-bourut/codeeval-challenges/master/moderate/37%20-%20Pangrams/37.js
-https://raw.githubusercontent.com/pascal-bourut/codeeval-challenges/master/moderate/37%20-%20Pangrams/37.php
-https://github.com/sds/codeeval/blob/master/moderate/pangrams/pangrams.rb
