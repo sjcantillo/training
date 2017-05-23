@@ -1,4 +1,4 @@
-"""Minimo de dos"""
+"""Minimo de tres"""
 CANTIDAD = input("Cantidad de valores: ")
 CANTIDAD = int(CANTIDAD)
 
