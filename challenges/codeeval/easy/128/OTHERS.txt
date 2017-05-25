@@ -1,4 +1,3 @@
-https://raw.githubusercontent.com/WillBrennan/CodeEval/master/python/Compressed%20Sequence.py
 https://raw.githubusercontent.com/pluralism/CodeEval/master/Compressed%20Sequence.cpp
 https://raw.githubusercontent.com/mneudert/codeeval/master/easy/compressed-sequence/js.js
 https://raw.githubusercontent.com/mpillar/codeeval/master/0-easy/compressed-sequence/Main.java

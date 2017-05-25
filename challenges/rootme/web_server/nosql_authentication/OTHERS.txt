@@ -1,1 +1,0 @@
-https://raw.githubusercontent.com/moeinfatehi/root-me.org-write-ups/master/NoSQL%20injection%20-%20authentication

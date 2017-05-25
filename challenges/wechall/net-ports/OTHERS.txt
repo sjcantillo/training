@@ -1,2 +1,1 @@
-https://lc4t.me/wechall/
 https://raw.githubusercontent.com/lc4t/OtherFiles/master/md/WeChall.md
