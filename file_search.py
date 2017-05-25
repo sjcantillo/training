@@ -11,7 +11,7 @@ import fnmatch
 
 
 def find_sources(ext, mode, directory='challenges/'):
-    """Fn to find sources based on an ext and under the default dir, challenges.
+    """Fn to find sources based on an ext under the default dir, challenges.
 
     Args:
         ext       (string): Extention of desired files.

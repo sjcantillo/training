@@ -3,8 +3,6 @@
 import os
 import file_search
 import itertools
-import sys
-sys.path.insert(0, 'builders')
 import others_builder
 
 # Guarantee scons version
@@ -46,4 +44,5 @@ bothers_builder = Builder(action = others_builder.build_others)
 env.Append(BUILDERS = {'BOthers' : bothers_builder})
 for sr, tg in itertools.izip(others_sources, others_targets):
     bothers_run = env.BOthers(target = tg, source = sr)
+
 
