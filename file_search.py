@@ -25,8 +25,7 @@ def find_sources(ext, mode, directory='challenges/'):
 
     matches = []
 #   iterate through dirs and append to matches
-    for root, dirnames, filenames in os.walk(directory):
-        tmp = dirnames
+    for root, _, filenames in os.walk(directory):
         if mode == 0:
             for filename in fnmatch.filter(filenames, '*.' + ext):
                 matches.append(os.path.join(root, filename))
