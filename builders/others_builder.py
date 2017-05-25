@@ -9,10 +9,12 @@ import urllib2
 import cookielib
 import string
 
+
 def build_others(target, source, env):
     """Fn to build OTHERS.txt. Fn makes a request to all URLs in the text file
-       and gets the HTTP status code. It creates a new target file with all URLs
-       and their respective HTTP status code. All status code 200 ok are valid.
+       and gets the HTTP status code. It creates a new target file with all
+       URLs and their respective HTTP status code. All status code 200 ok are
+       valid.
 
     Args:
         target    (list): Path to target file.
@@ -26,8 +28,8 @@ def build_others(target, source, env):
     """
 
     # Prep cookie
-    cj = cookielib.CookieJar()
-    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+    cookiej = cookielib.CookieJar()
+    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookiej))
     # Get urls in OTHERS
     other = env.File(source[0])
     other_cont = other.get_contents()
@@ -42,22 +44,23 @@ def build_others(target, source, env):
     # Iterate through urls
     for url in cont_arr:
         stat_code = 0
-        if(len(url) > 0):
+        ur_len = len(url)
+        if ur_len > 0:
             # Prepend protocol if missing
-            if(not url.startswith("http")):
+            if not url.startswith("http"):
                 url = 'http://' + url
             try:
                 # Prep and add headers
                 headers = {
                     'Accept': 'text/html,application/xhtml+xml,'
-                    'application/xml;q=0.9,*/*;q=0.8',
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 5.1;rv:10.0.1)'
-                    'Gecko/20100101 Firefox/10.0.1',}
+                    'application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla'
+                    '/5.0 (Windows NT 5.1;rv:10.0.1) Gecko/20100101'
+                    'Firefox/10.0.1', }
                 opener.addheaders = headers.items()
                 # Make req and get HTTP status code
                 stat_code = opener.open(url).getcode()
             # Handle errors
-            except (urllib2.HTTPError, urllib2.URLError) as e:
+            except (urllib2.HTTPError, urllib2.URLError):
                 print url + " -- HTTP/URL ERROR --"
                 return 1
             # Check for valid response
@@ -74,4 +77,3 @@ def build_others(target, source, env):
     target_file.close()
     target_f = env.File(target_file)
     return 0
-
