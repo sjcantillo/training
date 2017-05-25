@@ -31,8 +31,7 @@ def build_others(target, source, env):
     cookiej = cookielib.CookieJar()
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookiej))
     # Get urls in OTHERS
-    other = env.File(source[0])
-    other_cont = other.get_contents()
+    other_cont = env.File(source[0]).get_contents()
     cont_arr = string.split(other_cont, '\n')
     cont_arr = [x.strip() for x in cont_arr]
     # Prep directory location
@@ -53,9 +52,9 @@ def build_others(target, source, env):
                 # Prep and add headers
                 headers = {
                     'Accept': 'text/html,application/xhtml+xml,'
-                    'application/xml;q=0.9,*/*;q=0.8', 'User-Agent': 'Mozilla'
-                    '/5.0 (Windows NT 5.1;rv:10.0.1) Gecko/20100101'
-                    'Firefox/10.0.1', }
+                              'application/xml;q=0.9,*/*;q=0.8',
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 5.1;rv:10.0.1)'
+                                  'Gecko/20100101 Firefox/10.0.1', }
                 opener.addheaders = headers.items()
                 # Make req and get HTTP status code
                 stat_code = opener.open(url).getcode()
@@ -64,7 +63,7 @@ def build_others(target, source, env):
                 print url + " -- HTTP/URL ERROR --"
                 return 1
             # Check for valid response
-            if(stat_code != 200):
+            if stat_code != 200:
                 # Exit build with error 1
                 print url + " - " + str(stat_code) + "HTTP Status Code not 200"
                 return 1
