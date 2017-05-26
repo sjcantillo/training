@@ -17,6 +17,7 @@ install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
   - gem install cucumber
   - pip install pre-commit gitinspector
+  - pip install scons
 
 script:
   - ./precommit.sh
@@ -27,6 +28,7 @@ script:
   - ./nodata.sh
   - ./analysis.sh
 #  - ./others.sh
+  - scons
   - ./total.sh
   - ./reports.sh
 
