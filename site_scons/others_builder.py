@@ -45,7 +45,7 @@ def build_others(target, source, env):
         stat_code = 0
         ur_len = len(url)
         if ur_len > 0:
-            # Prepend protocol if missing
+            # Add protocol if missing
             if not url.startswith("http"):
                 url = 'https://' + url
             try:
