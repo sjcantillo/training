@@ -8,7 +8,25 @@ This module provides the builder function for all OTHERS.txt files.
 import urllib2
 import cookielib
 import string
+from retry import retry
 
+
+@retry(urllib2.URLError, tries=4, delay=3, backoff=2)
+def make_request(opener, url):
+    """Fn to make http request with max 4 retries and exponential backoff
+	   delay starting at 3 seconds.
+
+    Args:
+        opener (urllib2 Opener): Request object with headers.
+        url            (string): url to test.
+
+    Returns:
+        Int: xxx. HTTP Status code
+
+    """
+
+    # Make request and get HTTP Status Code
+    return opener.open(url).getcode()
 
 def build_others(target, source, env):
     """Fn to build OTHERS.txt. Fn makes a request to all URLs in the text file
@@ -45,9 +63,6 @@ def build_others(target, source, env):
         stat_code = 0
         ur_len = len(url)
         if ur_len > 0:
-            # Add protocol if missing
-            if not url.startswith("http"):
-                url = 'https://' + url
             try:
                 # Prep and add headers
                 headers = {

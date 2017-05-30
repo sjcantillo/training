@@ -18,17 +18,18 @@ install:
   - gem install cucumber
   - pip install pre-commit gitinspector
   - pip install scons
+  - pip install retry
 
 script:
   - ./precommit.sh
-  - ./url.sh
-  - ./check-solutions.sh
+#  - ./url.sh
+#  - ./check-solutions.sh
 #  - ./similarity.sh typea
 #  - ./similarity.sh typeb
-  - ./nodata.sh
-  - ./analysis.sh
+#  - ./nodata.sh
+#  - ./analysis.sh
 #  - ./others.sh
-#  - scons -j
+  - scons
   - ./total.sh
   - ./reports.sh
 
