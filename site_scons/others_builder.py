@@ -11,10 +11,10 @@ import string
 from retry import retry
 
 
-@retry(urllib2.URLError, tries=4, delay=3, backoff=2)
+@retry(urllib2.URLError, tries=4, delay=4, backoff=2)
 def make_request(opener, url):
     """Fn to make http request with max 4 retries and exponential backoff
-	   delay starting at 3 seconds.
+	   delay starting at 4 seconds.
 
     Args:
         opener (urllib2 Opener): Request object with headers.
