@@ -74,12 +74,9 @@ def build_others(target, source, env):
                 # Make req and get HTTP status code
                 stat_code = opener.open(url).getcode()
             # Handle errors
-            except (urllib2.HTTPError, urllib2.URLError):
-                print url + " -- HTTP/URL ERROR --"
+            except (urllib2.HTTPError, urllib2.URLError, socket.timeout) as e:
+                print url + " -- HTTP/URL ERROR --" + e
                 return 1
-			except socket.timeout:
-                print " -- Time Out Error -- "
-				return 1
             # Check for valid response
             if stat_code != 200:
                 # Exit build with error 1
