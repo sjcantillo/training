@@ -18,7 +18,6 @@ install:
   - gem install cucumber
   - pip install pre-commit gitinspector
   - pip install scons
-  - pip uninstall retry
 
 script:
   - ./precommit.sh
