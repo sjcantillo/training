@@ -29,7 +29,7 @@ script:
 #  - ./nodata.sh
 #  - ./analysis.sh
 #  - ./others.sh
-  - scons -c
+  - scons -j 4
   - ./total.sh
   - ./reports.sh
 
