@@ -18,6 +18,7 @@ install:
   - gem install cucumber
   - pip install pre-commit gitinspector
   - pip install scons
+  - pip install requests
 
 script:
   - ./precommit.sh
