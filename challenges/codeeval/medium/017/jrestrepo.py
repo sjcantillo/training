@@ -4,8 +4,8 @@
 def get_tests():
     """Get data"""
     cases = []
-    with open(sys.argv[1], "r") as file:
-        for i in file:
+    with open(filename, "r") as insumos:
+        for i in insumos:
             cases.append(i.strip())
     return cases
 
@@ -20,7 +20,7 @@ def suma(lista):
             res = (sum(data[indx:indy]))
             if res > maximum:
                 maximum = res
-    print(max)
+    print max
 
 def main():
     """main function"""
