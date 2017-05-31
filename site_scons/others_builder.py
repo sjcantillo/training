@@ -7,8 +7,8 @@ This module provides the builder function for all OTHERS.txt files.
 
 import cookielib
 import string
-import requests
-from requests.adapters import HTTPAdapter
+import requests #pylint: disable=F0401
+from requests.adapters import HTTPAdapter #pylint: disable=F0401
 
 
 def build_others(target, source, env):
