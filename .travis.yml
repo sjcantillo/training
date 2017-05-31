@@ -18,7 +18,7 @@ install:
   - gem install cucumber
   - pip install pre-commit gitinspector
   - pip install scons
-  - pip install retry
+  - pip uninstall retry
 
 script:
   - ./precommit.sh
@@ -29,7 +29,7 @@ script:
 #  - ./nodata.sh
 #  - ./analysis.sh
 #  - ./others.sh
-  - scons
+  - scons -j 4
   - ./total.sh
   - ./reports.sh
 
