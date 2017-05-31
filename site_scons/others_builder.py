@@ -65,7 +65,7 @@ def build_others(target, source, env):
             # Handle errors
             except (requests.ConnectionError, requests.Timeout) as e:
                 print url + " -- Connection/Timeout ERROR --"
-				print e
+                print e
                 return 1
             # Check for valid response
             if stat_code != 200:
