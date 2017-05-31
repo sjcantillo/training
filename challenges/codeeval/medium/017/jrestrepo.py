@@ -24,7 +24,7 @@ def suma(lista):
                 maximum = res
     print max
 
-    
+
 def main():
     """main function"""
     tests = get_tests()
