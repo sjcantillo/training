@@ -45,7 +45,7 @@ def build_others(target, source, env):
     s.mount('http://', HTTPAdapter(max_retries = 3))
     s.mount('https://', HTTPAdapter(max_retries = 3))
 	# Prep headers
-	headers = {
+    headers = {
         'Accept': 'text/html,application/xhtml+xml,'
                   'application/xml;q=0.9,*/*;q=0.8',
         'User-Agent': 'Mozilla/5.0 (Windows NT 5.1;rv:10.0.1)'
