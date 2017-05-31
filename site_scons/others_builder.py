@@ -59,7 +59,7 @@ def build_others(target, source, env):
             try:
                 # Add headers / Cookie
                 s.headers.update(headers)
-				s.cookies.update(cookiej)
+                s.cookies.update(cookiej)
                 # Make req and get HTTP status code
                 stat_code = s.get(url, timeout = 10).status_code
             # Handle errors
