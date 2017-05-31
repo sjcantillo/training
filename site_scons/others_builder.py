@@ -31,8 +31,7 @@ def build_others(target, source, env):
     # Prep cookie
     cookiej = cookielib.CookieJar()
     # Get urls in OTHERS
-    other_cont = env.File(source[0]).get_contents()
-    cont_arr = string.split(other_cont, '\n')
+    cont_arr = string.split(env.File(source[0]).get_contents(), '\n')
     cont_arr = [x.strip() for x in cont_arr]
     # Prep directory location
     target_dir = str(target[0])[:-10]
@@ -41,9 +40,9 @@ def build_others(target, source, env):
     # Make and open target file to write
     target_file = open(str(target_f), 'w')
     # Prep requests Session
-    s = requests.Session()
-    s.mount('http://', HTTPAdapter(max_retries=3))
-    s.mount('https://', HTTPAdapter(max_retries=3))
+    rsession = requests.Session()
+    rsession.mount('http://', HTTPAdapter(max_retries=3))
+    rsession.mount('https://', HTTPAdapter(max_retries=3))
     # Prep headers
     headers = {
         'Accept': 'text/html,application/xhtml+xml,'
@@ -58,14 +57,14 @@ def build_others(target, source, env):
         if ur_len > 0:
             try:
                 # Add headers / Cookie
-                s.headers.update(headers)
-                s.cookies.update(cookiej)
+                rsession.headers.update(headers)
+                rsession.cookies.update(cookiej)
                 # Make req and get HTTP status code
-                stat_code = s.get(url, timeout=10).status_code
+                stat_code = rsession.get(url, timeout=10).status_code
             # Handle errors
-            except (requests.ConnectionError, requests.Timeout) as e:
+            except (requests.ConnectionError, requests.Timeout) as excpt:
                 print url + " -- Connection/Timeout ERROR --"
-                print e
+                print excpt
                 return 1
             # Check for valid response
             if stat_code != 200:
