@@ -42,15 +42,15 @@ def build_others(target, source, env):
     target_file = open(str(target_f), 'w')
     # Prep requests Session
     s = requests.Session()
-    s.mount('http://', HTTPAdapter(max_retries = 3))
-    s.mount('https://', HTTPAdapter(max_retries = 3))
-	# Prep headers
+    s.mount('http://', HTTPAdapter(max_retries=3))
+    s.mount('https://', HTTPAdapter(max_retries=3))
+    # Prep headers
     headers = {
         'Accept': 'text/html,application/xhtml+xml,'
                   'application/xml;q=0.9,*/*;q=0.8',
         'User-Agent': 'Mozilla/5.0 (Windows NT 5.1;rv:10.0.1)'
                       'Gecko/20100101 Firefox/10.0.1'
-	}
+    }
     # Iterate through urls
     for url in cont_arr:
         stat_code = 0
@@ -61,7 +61,7 @@ def build_others(target, source, env):
                 s.headers.update(headers)
                 s.cookies.update(cookiej)
                 # Make req and get HTTP status code
-                stat_code = s.get(url, timeout = 10).status_code
+                stat_code = s.get(url, timeout=10).status_code
             # Handle errors
             except (requests.ConnectionError, requests.Timeout) as e:
                 print url + " -- Connection/Timeout ERROR --"
