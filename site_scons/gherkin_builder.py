@@ -5,7 +5,6 @@ This module provides the builder function for all .feature files.
 
 """
 
-from subprocess import Popen
 import subprocess
 import os
 
