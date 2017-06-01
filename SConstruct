@@ -44,5 +44,7 @@ bothers_builder = Builder(action = others_builder.build_others)
 env.Append(BUILDERS = {'BOthers' : bothers_builder})
 for sr, tg in itertools.izip(others_sources, others_targets):
     bothers_run = env.BOthers(target = tg, source = sr)
+env.Alias('others', others_targets)
 
-
+# Enable explicit builds only
+Default(None)
