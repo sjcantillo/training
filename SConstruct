@@ -4,6 +4,7 @@ import os
 import file_search
 import itertools
 import others_builder
+import gherkin_builder
 
 # Guarantee scons version
 EnsureSConsVersion(2, 3)
@@ -33,18 +34,29 @@ env.SConsignFile('build/decider')
 #py_sources = fileSearch.find_sources('py', 0)
 #rb_sources = fileSearch.find_sources('rb', 0)
 #sh_sources = fileSearch.find_sources('sh', 0)
+gherkin_sources = file_search.find_sources('feature', 0)
 others_sources = file_search.find_sources('txt', 1)
 
-# Prep targets
+# Prep OTHERS targets
 others_targets = others_sources
 others_targets = [ot.replace('challenges', 'build') for ot in others_targets]
+# Prep Gherkin targets
+gherkin_targets = gherkin_sources
+gherkin_targets = [gt.replace('challenges', 'build') for gt in gherkin_targets]
 
 # Builder - OTHERS
 bothers_builder = Builder(action = others_builder.build_others)
-env.Append(BUILDERS = {'BOthers' : bothers_builder})
+env.Append(BUILDERS = {'Bothers' : bothers_builder})
 for sr, tg in itertools.izip(others_sources, others_targets):
-    bothers_run = env.BOthers(target = tg, source = sr)
+    bothers_run = env.Bothers(target = tg, source = sr)
 env.Alias('others', others_targets)
+
+# Builder - Gherkin
+bgherkin_builder = Builder(action = gherkin_builder.build_gherkin)
+env.Append(BUILDERS = {'Bgherkin' : bgherkin_builder})
+for sr, tg in itertools.izip(gherkin_sources, gherkin_targets):
+    gherkin_run = env.Bgherkin(target = tg, source = sr)
+env.Alias('gherkin', gherkin_targets)
 
 # Enable explicit builds only
 Default(None)
