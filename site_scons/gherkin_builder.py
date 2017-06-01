@@ -44,8 +44,8 @@ def build_gherkin(target, source, env):
         return 1
     # Check cucumber output
     if output != 0:
-            print "Gherkin build failed -- " + str(output)
-            return 1
+        print "Gherkin build failed -- " + str(output)
+        return 1
     else:
         # Cucumber success
         print "Gherkin Success"
