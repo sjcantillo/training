@@ -13,8 +13,8 @@ def factor_primo(numero):
 
 
 def pedir_numero():
-    """Solicita el número al usuario"""
-    valor = int(input("Ingrese el número para calcular factores primos: "))
+    """Solicita el numero al usuario"""
+    valor = int(input("Ingrese el numero para calcular factores primos: "))
     factor_primo(valor)
 
 
