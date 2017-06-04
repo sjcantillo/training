@@ -6,7 +6,7 @@ def fibonacci(numero):
     valor_a, valor_b = 0, 1
     sumatoria = 0
     while valor_a < numero:
-        print(valor_a, end=' ')
+        print valor_a
         valor_a, valor_b = valor_b, valor_a + valor_b
         if int(valor_a) % 2 == 0:
             sumatoria += valor_a
