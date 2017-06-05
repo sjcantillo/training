@@ -5,8 +5,8 @@ This module provides the builder function for all OTHERS.txt files.
 
 """
 
-import request_session
 import string
+import request_session
 
 
 def build_others(target, source, env):

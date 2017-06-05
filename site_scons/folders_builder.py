@@ -5,8 +5,8 @@ This module provides the builder function for all folders.
 
 """
 
-import request_session
 import os.path
+import request_session
 
 
 def build_folders(target, source, env):
@@ -43,8 +43,8 @@ def build_folders(target, source, env):
             # Check for valid response
             if stat_code != 200:
                 # Exit build with error 1
-                print chal_link + " - " + str(stat_code) + " Status Code not 200"
-                #return 1
+                print chal_link + " Status Code not 200 - " + str(stat_code)
+#               return 1
             else:
                 # 200 ok
                 print chal_link + " - " + str(stat_code)
@@ -55,5 +55,5 @@ def build_folders(target, source, env):
     target_f = env.File(target_file)
     if not link_exist:
         print target_file.name[:-10], " - LINK file does not exist -- "
-        #return 1
+#       return 1
     return 0

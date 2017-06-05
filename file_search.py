@@ -35,6 +35,7 @@ def find_sources(ext, mode, directory='challenges/'):
 
     return matches
 
+
 def find_folders(directory='challenges/'):
     """Fn to find folder names under default dir, challenges.
 
