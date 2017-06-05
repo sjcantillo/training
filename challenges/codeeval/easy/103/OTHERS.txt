@@ -4,4 +4,3 @@ https://raw.githubusercontent.com/leaen/Codeeval-solutions/master/lowest-unique.
 https://raw.githubusercontent.com/SedaKunda/CodeEval/master/Easy-Level/LowestUniqueNumber.java
 https://raw.githubusercontent.com/pascal-bourut/codeeval-challenges/master/easy/103%20-%20Lowest%20unique%20number/103.js
 https://raw.githubusercontent.com/pascal-bourut/codeeval-challenges/master/easy/103%20-%20Lowest%20unique%20number/103.php
-https://github.com/sds/codeeval/blob/master/easy/lowest-unique-number/lowest-unique-number.rb
