@@ -41,12 +41,12 @@ def find_folders(directory='challenges/'):
 
     Args:
         directory (string): Default dir 'challenges/'.
- 
+
     Returns:
         List: matches[]. Contains list of folder names.
- 
+
     """
- 
+
     matches = []
 #   iterate through dirs and append to matches
     for root, dirs, filenames in os.walk(directory):
@@ -55,5 +55,5 @@ def find_folders(directory='challenges/'):
             for name in filenames:
                 fname_matches.append(os.path.join(root, name))
             matches.append(fname_matches)
- 
+
     return matches
