@@ -43,7 +43,7 @@ def build_folders(target, source, env):
             # Check for valid response
             if stat_code != 200:
                 # Exit build with error 1
-                #print chal_link + " - " + str(stat_code) + " Status Code not 200"
+                print chal_link + " - " + str(stat_code) + " Status Code not 200"
                 #return 1
             else:
                 # 200 ok
