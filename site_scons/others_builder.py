@@ -5,10 +5,8 @@ This module provides the builder function for all OTHERS.txt files.
 
 """
 
-import cookielib
+import request_session
 import string
-import requests  # pylint: disable=F0401
-from requests.adapters import HTTPAdapter  # pylint: disable=F0401
 
 
 def build_others(target, source, env):
@@ -28,8 +26,6 @@ def build_others(target, source, env):
 
     """
 
-    # Prep cookie
-    cookiej = cookielib.CookieJar()
     # Get urls in OTHERS
     cont_arr = string.split(env.File(source[0]).get_contents(), '\n')
     cont_arr = [x.strip() for x in cont_arr]
@@ -39,33 +35,12 @@ def build_others(target, source, env):
     target_f = env.File(str(target[0]))
     # Make and open target file to write
     target_file = open(str(target_f), 'w')
-    # Prep requests Session
-    rsession = requests.Session()
-    rsession.mount('http://', HTTPAdapter(max_retries=3))
-    rsession.mount('https://', HTTPAdapter(max_retries=3))
-    # Prep headers
-    headers = {
-        'Accept': 'text/html,application/xhtml+xml,'
-                  'application/xml;q=0.9,*/*;q=0.8',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 5.1;rv:10.0.1)'
-                      'Gecko/20100101 Firefox/10.0.1'
-    }
     # Iterate through urls
     for url in cont_arr:
         stat_code = 0
         ur_len = len(url)
         if ur_len > 0:
-            try:
-                # Add headers / Cookie
-                rsession.headers.update(headers)
-                rsession.cookies.update(cookiej)
-                # Make req and get HTTP status code
-                stat_code = rsession.get(url, timeout=10).status_code
-            # Handle errors
-            except (requests.ConnectionError, requests.Timeout) as excpt:
-                print url + " -- Connection/Timeout ERROR --"
-                print excpt
-                return 1
+            stat_code = request_session.get_code(url)
             # Check for valid response
             if stat_code != 200:
                 # Exit build with error 1
