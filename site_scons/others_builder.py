@@ -55,5 +55,5 @@ def build_others(target, source, env):
     target_file.close()
     target_f = env.File(target_file)
     # Print file build success
-    print "ok "
+    # print "ok "
     return 0
