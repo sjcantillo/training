@@ -25,7 +25,7 @@ env['ENV']['PYTHONWARNINGS'] = 'ignore'
 
 # File change cache location
 env.SConsignFile('build/decider')
-#env.CacheDir('build/build_cache')
+env.CacheDir('build/build_cache')
 
 # Find all required sources
 #cpp_sources = fileSearch.find_sources('cpp', 0)
