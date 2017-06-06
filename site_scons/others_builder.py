@@ -48,10 +48,12 @@ def build_others(target, source, env):
                 return 1
             else:
                 # 200 ok
-                print url + " - " + str(stat_code)
+                # print url + " - " + str(stat_code)
                 # Append result to target file
                 target_file.write(url + " - " + str(stat_code) + "\n")
     # Close file
     target_file.close()
     target_f = env.File(target_file)
+    # Print file build success
+    print "ok "
     return 0
