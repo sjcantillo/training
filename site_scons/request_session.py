@@ -5,7 +5,6 @@ This module creates an HTTP session and provides methods to work with it.
 
 """
 
-import cookielib
 import requests  # pylint: disable=F0401
 from requests.adapters import HTTPAdapter  # pylint: disable=F0401
 
@@ -23,8 +22,6 @@ def get_code(chal_link):
 
     """
 
-    # Prep cookie
-    cookiej = cookielib.CookieJar()
     # Prep requests Session
     rsession = requests.Session()
     rsession.mount('http://', HTTPAdapter(max_retries=3))
@@ -37,9 +34,8 @@ def get_code(chal_link):
                       'Gecko/20100101 Firefox/10.0.1',
         'Accept-Encoding': 'gzip, deflate'
     }
-    # Add headers / Cookie
+    # Add headers
     rsession.headers.update(headers)
-    rsession.cookies.update(cookiej)
     stat_code = 0
     link_len = len(chal_link)
     if link_len > 0:
