@@ -9,6 +9,32 @@ import os.path
 import request_session
 
 
+def check_whitelist(target_dir):
+    """Fn to check whitelist. Fn reads contents of site_scons/whitelist.txt
+	   into a list and check if the target_dir in in the whitelist.
+
+    Args:
+        target_dir (string): domain name of LINK.txt file.
+
+    Returns:
+        Bool: True. If target_dir is in whitelist.
+
+    """
+
+    # Link white list
+    white_file = 'site_scons/whitelist.txt'
+    # Get whitelist into list
+    with open(white_file) as whitef:
+        dir_whitelist = [d.strip('\n') for d in whitef.readlines()]
+    in_list = False
+    # Iterate through whitelist
+    for it in dir_whitelist:
+        # Check for hit
+        if it in str(target_dir):
+            in_list = True
+    # Return answer
+    return in_list
+
 def build_folders(target, source, env):
     """Fn to build folders. Fn makes a request to all URLs in the text file
        and gets the HTTP status code. It creates a new target file with all
@@ -38,22 +64,28 @@ def build_folders(target, source, env):
         if os.path.basename(fname.rstr()) == "LINK.txt":
             link_exist = True
             chal_link = str(fname.get_contents())
-            # Get HTTP Status code
-            stat_code = request_session.get_code(chal_link)
-            # Check for valid response
-            if stat_code != 200:
-                # Exit build with error 1
-                print chal_link + " Status Code not 200 - " + str(stat_code)
-#               return 1
+            # Check whitelist
+            white_list = check_whitelist(target_dir)
+            if not white_list:
+                # Get HTTP Status code
+                stat_code = request_session.get_code(chal_link)
+                # Check for valid response
+                if stat_code != 200:
+                    # Exit build with error 1
+                    print chal_link + " Status Code not 200 - " + str(stat_code)
+                    return 1
+                else:
+                    # 200 ok
+                    print str(stat_code)
+                    # Append result to target file
+                    target_file.write(chal_link + " - " + str(stat_code) + "\n")
             else:
-                # 200 ok
-                print chal_link + " - " + str(stat_code)
-                # Append result to target file
-                target_file.write(chal_link + " - " + str(stat_code) + "\n")
+                # Append result for whitelist files
+                target_file.write(chal_link + " - WHITELIST ITEM \n")
     # Close file
     target_file.close()
     target_f = env.File(target_file)
     if not link_exist:
         print target_file.name[:-10], " - LINK file does not exist -- "
-#       return 1
+        return 1
     return 0
