@@ -11,7 +11,7 @@ import request_session
 
 def check_whitelist(target_dir):
     """Fn to check whitelist. Fn reads contents of site_scons/whitelist.txt
-	   into a list and check if the target_dir in in the whitelist.
+       into a list and check if the target_dir in in the whitelist.
 
     Args:
         target_dir (string): domain name of LINK.txt file.
@@ -28,12 +28,13 @@ def check_whitelist(target_dir):
         dir_whitelist = [d.strip('\n') for d in whitef.readlines()]
     in_list = False
     # Iterate through whitelist
-    for it in dir_whitelist:
+    for itm in dir_whitelist:
         # Check for hit
-        if it in str(target_dir):
+        if itm in str(target_dir):
             in_list = True
     # Return answer
     return in_list
+
 
 def build_folders(target, source, env):
     """Fn to build folders. Fn makes a request to all URLs in the text file
@@ -72,13 +73,13 @@ def build_folders(target, source, env):
                 # Check for valid response
                 if stat_code != 200:
                     # Exit build with error 1
-                    print chal_link + " Status Code not 200 - " + str(stat_code)
+                    print chal_link + " Stat Code not 200 - " + str(stat_code)
                     return 1
                 else:
                     # 200 ok
                     print str(stat_code)
                     # Append result to target file
-                    target_file.write(chal_link + " - " + str(stat_code) + "\n")
+                    target_file.write(chal_link + "-" + str(stat_code) + "\n")
             else:
                 # Append result for whitelist files
                 target_file.write(chal_link + " - WHITELIST ITEM \n")
