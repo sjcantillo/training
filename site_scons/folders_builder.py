@@ -23,15 +23,12 @@ def check_whitelist(target_dir):
 
     # Link white list
     white_file = 'site_scons/whitelist.txt'
-    # Get whitelist into list
-    with open(white_file) as whitef:
-        dir_whitelist = [d.strip('\n') for d in whitef.readlines()]
     in_list = False
-    # Iterate through whitelist
-    for itm in dir_whitelist:
-        # Check for hit
-        if itm in str(target_dir):
-            in_list = True
+    # Read whitelist into list
+    with open(white_file) as whitef:
+        for line in whitef:
+            if line.strip() in target_dir:
+                in_list = True
     # Return answer
     return in_list
 
@@ -66,7 +63,7 @@ def build_folders(target, source, env):
             link_exist = True
             chal_link = str(fname.get_contents())
             # Check whitelist
-            white_list = check_whitelist(target_dir)
+            white_list = check_whitelist(str(target_dir))
             if not white_list:
                 # Get HTTP Status code
                 stat_code = request_session.get_code(chal_link)
