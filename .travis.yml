@@ -23,12 +23,10 @@ install:
 script:
   - ./precommit.sh
   - ./url.sh
-#  - ./check-solutions.sh
 #  - ./similarity.sh typea
 #  - ./similarity.sh typeb
   - ./nodata.sh
   - ./analysis.sh
-#  - ./others.sh
   - scons others --debug=explain
   - scons gherkin
   - ./total.sh
