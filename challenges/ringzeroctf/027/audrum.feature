@@ -23,6 +23,6 @@ Característica: Resolver reto 27
   Escenario: Solución exitosa
     Dado que estoy auntenticado con mi usuario Audrum
     Cuando observo el código fuente
-    Y observo la el usuario con el password
+    Y observo el usuario con el password
     Y lo ingreso al formulario
     Entonces resuelvo el reto
