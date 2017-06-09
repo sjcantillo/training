@@ -17,16 +17,18 @@ install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
   - gem install cucumber
   - pip install pre-commit gitinspector
+  - pip install scons
+  - pip install requests
 
 script:
   - ./precommit.sh
   - ./url.sh
-  - ./check-solutions.sh
 #  - ./similarity.sh typea
 #  - ./similarity.sh typeb
   - ./nodata.sh
   - ./analysis.sh
-#  - ./others.sh
+  - scons others --debug=explain
+  - scons gherkin
   - ./total.sh
   - ./reports.sh
 

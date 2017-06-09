@@ -1,1 +1,0 @@
-https://raw.githubusercontent.com/beebun/CTF/master/root-me.org/app-script/Python%20-%20input%28%29

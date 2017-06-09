@@ -2,7 +2,6 @@ https://raw.githubusercontent.com/xamroc/ReverseWords/master/Main.java
 https://raw.githubusercontent.com/edeng/CodeEval/master/Easy/ReverseWords.java
 https://raw.githubusercontent.com/arnabkd/codeeval-challenges/master/reverse-words/Main.java
 https://raw.githubusercontent.com/mpillar/codeeval/master/0-easy/reverse-words/Main.java
-https://raw.githubusercontent.com/WillBrennan/CodeEval/master/python/Reverse%20Words.py
 https://raw.githubusercontent.com/thiagoalessio/codeeval/master/easy/reverse-words/solution.py
 https://gist.githubusercontent.com/yuheiomori/f880d78af267591c8a19/raw/c856d67635f5057210c08e82ed59ce2c0c8212a1/main.py
 https://raw.githubusercontent.com/ssmehta/programming-challanges/master/codeeval/008_reverse-words.py

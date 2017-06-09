@@ -7,4 +7,3 @@ https://raw.githubusercontent.com/jonyamo/CodeEval/master/haskell/src/SwapCase.h
 https://raw.githubusercontent.com/SedaKunda/CodeEval/master/Easy-Level/SwapCase.java
 https://raw.githubusercontent.com/pascal-bourut/codeeval-challenges/master/easy/96%20-%20Swap%20Case/96.js
 https://raw.githubusercontent.com/pascal-bourut/codeeval-challenges/master/easy/96%20-%20Swap%20Case/96.php
-https://github.com/sds/codeeval/blob/master/easy/swap-case/swap-case.rb

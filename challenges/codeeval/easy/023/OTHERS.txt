@@ -1,7 +1,6 @@
 https://raw.githubusercontent.com/mneudert/codeeval/master/easy/multiplication-tables/c.c
 https://raw.githubusercontent.com/mneudert/codeeval/master/easy/multiplication-tables/cpp.cpp
 https://raw.githubusercontent.com/mneudert/codeeval/master/easy/multiplication-tables/go.go
-https://raw.githubusercontent.com/sds/codeeval/master/easy/multiplication-tables/multiplication-tables.rb
 https://raw.githubusercontent.com/mneudert/codeeval/master/easy/multiplication-tables/cs.cs
 https://raw.githubusercontent.com/mpillar/codeeval/master/0-easy/multiplication-tables/Main.java
 https://raw.githubusercontent.com/paulinar/code-eval-challenges/master/easy/multTable.java

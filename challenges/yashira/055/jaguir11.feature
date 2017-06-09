@@ -17,4 +17,5 @@ Feature: Solve Hablando con los muertos challenge
     And I look at the instructions right before it
     And I see a JE instruction which jumps past the "Clave Valida" message
     And I change the op code as to get the JNE instruction
+    And it worked
     Then I solve the challenge

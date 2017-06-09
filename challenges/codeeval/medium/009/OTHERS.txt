@@ -1,4 +1,3 @@
-https://raw.githubusercontent.com/sds/codeeval/master/moderate/stack-implementation/stack-implementation.rb
 https://raw.githubusercontent.com/mpillar/codeeval/master/1-moderate/stack-implementation/Main.java
 https://raw.githubusercontent.com/ssmehta/programming-challanges/master/codeeval/009_stack-implementation.py
 https://raw.githubusercontent.com/mneudert/codeeval/master/moderate/stack-implementation/php.php
