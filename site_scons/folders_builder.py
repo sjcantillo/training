@@ -144,6 +144,8 @@ def build_folders(target, source, env):
                 try:
                     # Run linters
                     py_build = build_python(fname)
+                    if py_build == 0:
+                        target_file.write(fname.rstr() + "- py success \n")
                 # Handle errors
                 except OSError as oerr:
                     print "OSError > ", oerr.errno, " - ", oerr.strerror
@@ -151,6 +153,7 @@ def build_folders(target, source, env):
             else:
                 # Omit build for old files
                 py_build = 0
+                target_file.write(fname.rstr() + "OLD - omiting linter \n")
     # Close file
     target_file.close()
     target_f = env.File(target_file)
