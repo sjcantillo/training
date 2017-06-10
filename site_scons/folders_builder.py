@@ -36,28 +36,38 @@ def check_whitelist(target_dir):
     return in_list
 
 
-def check_link(chal_link):
-    """Fn to check LINK.txt files. Fn makes the request, gets the http status
+def check_link(chal_link, target_dir):
+    """Fn to check LINK.txt files. Fn checks the whitelist and if item is not
+       present it makes the request to the chal_link, gets the http status
        code and checks for a 200ok.
 
     Args:
-        chal_link (string) : url to challenge.
+        chal_link  (string) : url to challenge.
+        target_dir (string) : target dir to check in whitelist.
 
     Returns:
         Bool: True. If 200ok.
 
     """
 
-    # Get HTTP Status code
-    stat_code = request_session.get_code(chal_link)
-    # Check for valid response
-    if stat_code != 200:
-        # Exit build with error 1
-        print chal_link + " Stat Code not 200 - " + str(stat_code)
+    # Init valid_resp
+    valid_resp = 1
+    # Check whitelist
+    white_list = check_whitelist(str(target_dir))
+    if not white_list:
+        # Get HTTP Status code
+        stat_code = request_session.get_code(chal_link)
+        # Check for valid response
+        if stat_code != 200:
+            # Exit build with error 1
+            print chal_link + " Stat Code not 200 - " + str(stat_code)
+        else:
+            # 200 ok
+            print str(stat_code)
+            # Valid response
+            valid_resp = 0
     else:
-        # 200 ok
-        print str(stat_code)
-        # Valid response
+        # whitelist item
         valid_resp = 0
     # Return answer
     return valid_resp
@@ -107,6 +117,7 @@ def build_folders(target, source, env):
              0. For successfull build.
 
     """
+
     # builder creation date
     born_unix = time.mktime(date(2017, 06, 9).timetuple())
     # Prep directory location
@@ -125,15 +136,7 @@ def build_folders(target, source, env):
         if os.path.basename(fname.rstr()) == "LINK.txt":
             link_exist = True
             chal_link = str(fname.get_contents())
-            # Check whitelist
-            white_list = check_whitelist(str(target_dir))
-            if not white_list:
-                # Check LINK.txt for 200ok
-                link_build = check_link(chal_link)
-            else:
-                # Append result for whitelist files
-                link_build = 0
-                target_file.write(chal_link + " - WHITELIST ITEM \n")
+            link_build = check_link(chal_link, target_dir)
             if link_build == 0:
                 target_file.write(chal_link + "- 200" + "\n")
         # Check .py files
@@ -144,6 +147,8 @@ def build_folders(target, source, env):
                 try:
                     # Run linters
                     py_build = build_python(fname)
+                    if py_build == 0:
+                        target_file.write(fname.rstr() + "- py success \n")
                 # Handle errors
                 except OSError as oerr:
                     print "OSError > ", oerr.errno, " - ", oerr.strerror
@@ -151,6 +156,7 @@ def build_folders(target, source, env):
             else:
                 # Omit build for old files
                 py_build = 0
+                target_file.write(fname.rstr() + "OLD - omiting linter \n")
     # Close file
     target_file.close()
     target_f = env.File(target_file)
