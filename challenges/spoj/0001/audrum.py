@@ -5,7 +5,7 @@ def verify_number(numbers):
     """Stop after read the number 42"""
     for i in numbers:
         if i != 42:
-            print(i)
+            print i
         else:
             exit()
 
