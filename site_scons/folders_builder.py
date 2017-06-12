@@ -85,7 +85,6 @@ def build_python(fname):
 
     """
 
-    cwd = os.getcwd()
     # Prep commands
     flake_cmd = ["flake8"]
     str_fname = str(fname)
@@ -101,7 +100,6 @@ def build_python(fname):
         print "OSError > ", oerr.errno, " - ", oerr.strerror
         out_flake = 1
         out_plint = 1
-        print flake_cmd, " -- ", pylint_cmd, " -- ", cwd
     # Sum absolute value of exit codes
     output = abs(out_flake) + abs(out_plint)
     # Return combined exit code
@@ -125,7 +123,7 @@ def build_folders(target, source, env):
     """
 
     # builder creation date
-    born_unix = time.mktime(date(2017, 06, 9).timetuple())
+    born_unix = time.mktime(date(2017, 06, 12).timetuple())
     # Prep directory location
     target_dir = os.path.dirname(str(target[0]))
     target_dir = env.Dir(target_dir)
