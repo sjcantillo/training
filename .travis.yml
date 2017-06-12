@@ -26,9 +26,10 @@ script:
 #  - ./similarity.sh typea
 #  - ./similarity.sh typeb
   - ./nodata.sh
-  - ./analysis.sh
+#  - ./analysis.sh
   - scons others --debug=explain
   - scons gherkin
+  - scons folders
   - ./total.sh
   - ./reports.sh
 
