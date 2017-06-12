@@ -5,6 +5,7 @@ This module provides the builder function for all folders.
 
 """
 
+import os
 import os.path
 import subprocess
 import time
@@ -84,6 +85,7 @@ def build_python(fname):
 
     """
 
+    cwd = os.getcwd()
     # Prep commands
     flake_cmd = ["flake8"]
     flake_cmd.append(str(fname))
@@ -98,7 +100,7 @@ def build_python(fname):
         print "OSError > ", oerr.errno, " - ", oerr.strerror
         out_flake = 1
         out_plint = 1
-        print flake_cmd, " -- ", pylint_cmd
+        print flake_cmd, " -- ", pylint_cmd, " -- ", cwd
     # Sum absolute value of exit codes
     output = abs(out_flake) + abs(out_plint)
     # Return combined exit code
