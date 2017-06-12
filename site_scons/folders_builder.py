@@ -109,6 +109,37 @@ def build_python(fname):
     return output
 
 
+def check_builds(build_list):
+    """Fn to check the result of the different builds. Fn iterates through the
+    given dictionary of build outputs and checks if they are 0.
+
+    Args:
+        build_list (dictionary): All the builds and their exit code.
+
+    Returns:
+        List: Int. Exit code. 0 for success.
+              str. Exit message.
+
+    """
+
+    # Init return vars
+    ret_msg = []
+    out_msg = []
+    exit_code = 0
+    # Iterate through dict
+    for b_name, out_code in build_list.iteritems():
+        # Check exit code
+        if out_code != 0:
+            # Set error message
+            err_msg = b_name + " build failed"
+            out_msg.append(err_msg)
+            exit_code += 1
+    # Make return message
+    ret_msg.append(exit_code)
+    ret_msg.append(out_msg)
+    return ret_msg
+
+
 def build_folders(target, source, env):
     """Fn to build folders. Fn iterates through all files in the folder and
        checks the existence and validity of the LINK file and runs the linters
@@ -134,36 +165,38 @@ def build_folders(target, source, env):
     # Make and open target file to write
     target_file = open(str(target_f), 'w')
     # Init folder build vars
-    link_build = 1
-    py_build = 0
+    build_out_list = {"lnk_bld":1, "py_bld":0, "rb_bld":0}
     link_exist = False
     # Iterate through folder
     for fname in source:
+        # Get file last mod date
+        fdate = os.path.getmtime(fname.rstr())
+        # File basename
+        fbase_name = os.path.basename(fname.rstr())
         # Check LINK.txt files
         if os.path.basename(fname.rstr()) == "LINK.txt":
             link_exist = True
             chal_link = str(fname.get_contents())
-            link_build = check_link(chal_link, target_dir)
-            if link_build == 0:
+            build_out_list["lnk_bld"] = check_link(chal_link, target_dir)
+            if build_out_list["lnk_bld"] == 0:
                 target_file.write(chal_link + "- 200" + "\n")
-        # Check .py files
-        elif os.path.basename(fname.rstr()).endswith(".py"):
-            # Only check files created after builder
-            fdate = os.path.getmtime(fname.rstr())
-            if fdate > born_unix:
-                try:
-                    # Run linters
-                    py_build = build_python(fname)
-                    if py_build == 0:
-                        target_file.write(fname.rstr() + "- py success \n")
-                # Handle errors
-                except OSError as oerr:
-                    print "OSError > ", oerr.errno, " - ", oerr.strerror
-                    return 1
-            else:
-                # Omit build for old files
-                py_build = 0
-                target_file.write(fname.rstr() + "OLD - omiting linter \n")
+        # Only check files created after builder
+        elif fdate > born_unix:
+            # Check python files
+            if fbase_name.endswith(".py"):
+                # Run linter
+                build_out_list["py_bld"] = build_python(fname)
+                if build_out_list["py_bld"] == 0:
+                    target_file.write(fname.rstr() + "- py success \n")
+            # Check ruby files
+            elif fbase_name.endswith(".rb"):
+                # Run linter
+                build_out_list["rb_bld"] = build_ruby(fname)
+                if build_out_list["rb_bld"] == 0:
+                    target_file.write(fname.rstr() + "- rb success \n")
+        else:
+            # Omit build for old files
+            target_file.write(fname.rstr() + "OLD - omiting linter \n")
     # Close file
     target_file.close()
     target_f = env.File(target_file)
@@ -171,13 +204,11 @@ def build_folders(target, source, env):
     if not link_exist:
         print target_file.name[:-10], " - LINK file does not exist - "
         return 1
-    # Check builds - LINK.txt
-    elif link_build != 0:
-        print " - LINK.txt Build Failed - "
-        return 1
-    # Check builds - python
-    elif py_build != 0:
-        print " - Python Build Failed - "
-        return 1
-    # All checks passed
-    return 0
+    # Check builds
+    else:
+        build_success = check_builds(build_out_list)
+    # Print out message
+    for msg in build_success[1]:
+        print msg
+    # Return exit code
+    return build_success[0]
