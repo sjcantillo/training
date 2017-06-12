@@ -88,10 +88,10 @@ def build_python(fname):
     cwd = os.getcwd()
     # Prep commands
     flake_cmd = ["flake8"]
-    flake_fname = os.path.join(cwd, str(fname))
+    flake_fname = '#' + str(fname)
     flake_cmd.append(flake_fname)
     pylint_cmd = ["pylint"]
-    py_fname = os.path.join(cwd, str(fname))
+    py_fname = '#' + str(fname)
     pylint_cmd.append(py_fname)
     # Call flake8 and Pylint on python file
     try:
