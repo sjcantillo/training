@@ -30,7 +30,11 @@ def check_whitelist(target_dir):
     # Read whitelist into list
     with open(white_file) as whitef:
         for line in whitef:
-            if line.strip() in target_dir:
+            # strip comments
+            comment_i = line.find("#")
+            clean_line = line[:comment_i].strip()
+            clean_len = len(clean_line)
+            if clean_len > 0 and clean_line in target_dir:
                 in_list = True
     # Return answer
     return in_list
@@ -86,9 +90,10 @@ def build_python(fname):
 
     # Prep commands
     flake_cmd = ["flake8"]
-    flake_cmd.append(str(fname))
-    pylint_cmd = ["flake8"]
-    pylint_cmd.append(str(fname))
+    str_fname = str(fname)
+    flake_cmd.append(str_fname)
+    pylint_cmd = ["pylint"]
+    pylint_cmd.append(str_fname)
     # Call flake8 and Pylint on python file
     try:
         out_flake = subprocess.call(flake_cmd, shell=False)
@@ -96,6 +101,8 @@ def build_python(fname):
     # Handle Errors
     except OSError as oerr:
         print "OSError > ", oerr.errno, " - ", oerr.strerror
+        out_flake = 1
+        out_plint = 1
     # Sum absolute value of exit codes
     output = abs(out_flake) + abs(out_plint)
     # Return combined exit code
@@ -119,7 +126,7 @@ def build_folders(target, source, env):
     """
 
     # builder creation date
-    born_unix = time.mktime(date(2017, 06, 9).timetuple())
+    born_unix = time.mktime(date(2017, 06, 13).timetuple())
     # Prep directory location
     target_dir = os.path.dirname(str(target[0]))
     target_dir = env.Dir(target_dir)

@@ -19,6 +19,8 @@ install:
   - pip install pre-commit gitinspector
   - pip install scons
   - pip install requests
+  - pip install flake8
+  - pip install pylint
 
 script:
   - ./precommit.sh
@@ -26,9 +28,10 @@ script:
 #  - ./similarity.sh typea
 #  - ./similarity.sh typeb
   - ./nodata.sh
-  - ./analysis.sh
+#  - ./analysis.sh
   - scons others --debug=explain
   - scons gherkin
+  - scons folders
   - ./total.sh
   - ./reports.sh
 
