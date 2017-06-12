@@ -5,7 +5,6 @@ This module provides the builder function for all folders.
 
 """
 
-import os
 import os.path
 import subprocess
 import time
