@@ -30,7 +30,11 @@ def check_whitelist(target_dir):
     # Read whitelist into list
     with open(white_file) as whitef:
         for line in whitef:
-            if line.strip() in target_dir:
+            # strip comments
+            comment_i = line.find("#")
+            clean_line = line[:comment_i].strip()
+            clean_len = len(clean_line)
+            if clean_len > 0 and clean_line in target_dir:
                 in_list = True
     # Return answer
     return in_list
