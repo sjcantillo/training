@@ -102,7 +102,7 @@ def build_python(fname):
         print "OSError > ", oerr.errno, " - ", oerr.strerror
         out_flake = 1
         out_plint = 1
-        print flake_cmd, " -- ", pylint_cmd, " -- ", cwd
+        print flake_cmd, " -- ", pylint_cmd, " -- ", cwd, " -- ", flake_loc
     # Sum absolute value of exit codes
     output = abs(out_flake) + abs(out_plint)
     # Return combined exit code
