@@ -87,14 +87,14 @@ def build_python(fname):
 
     cwd = os.getcwd()
     # Prep commands
-    flake_cmd = ["/dev/null/flake8"]
+    flake_cmd = ["flake8"]
     str_fname = str(fname)
     flake_cmd.append(str_fname)
-    pylint_cmd = ["/dev/null/pylint"]
+    pylint_cmd = ["pylint"]
     pylint_cmd.append(str_fname)
     # Call flake8 and Pylint on python file
     try:
-        flake_loc = subprocess.call("which flake8", shell=True)
+        flake_loc = subprocess.call(flake_cmd, shell=True)
         out_flake = subprocess.call(flake_cmd, shell=False)
         out_plint = subprocess.call(pylint_cmd, shell=False)
     # Handle Errors
