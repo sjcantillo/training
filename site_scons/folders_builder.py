@@ -94,7 +94,7 @@ def build_python(fname):
     pylint_cmd.append(str_fname)
     # Call flake8 and Pylint on python file
     try:
-        flake_loc = subprocess.call(flake_cmd, shell=True)
+        flake_loc = subprocess.check_output(["which", "flake8"])
         out_flake = subprocess.call(flake_cmd, shell=False)
         out_plint = subprocess.call(pylint_cmd, shell=False)
     # Handle Errors
