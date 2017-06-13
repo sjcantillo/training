@@ -109,6 +109,33 @@ def build_python(fname):
     return output
 
 
+def build_ruby(fname):
+    """Fn to check ruby sintax. Fn execs ruby-lint command and returns
+       the exit code.
+
+    Args:
+        fname (string) : path to py file.
+
+    Returns:
+        Int: 0. If success.
+
+    """
+
+    # Prep commands
+    rblint_cmd = ["flake8"]
+    str_fname = str(fname)
+    rblint_cmd.append(str_fname)
+    # Call ruby-lint on ruby file
+    try:
+        out_rblint = subprocess.call(rblint_cmd, shell=False)
+    # Handle Errors
+    except OSError as oerr:
+        print "OSError > ", oerr.errno, " - ", oerr.strerror
+        out_rblint = 1
+    # Return exit code
+    return out_rblint
+
+
 def check_builds(build_list):
     """Fn to check the result of the different builds. Fn iterates through the
     given dictionary of build outputs and checks if they are 0.
