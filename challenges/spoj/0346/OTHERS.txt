@@ -1,0 +1,2 @@
+https://github.com/marioyc/Online-Judge-Solutions/blob/master/SPOJ/Classical/346%20-%20Bytelandian%20gold%20coins.cpp
+https://shubhambhattar.wordpress.com/2015/09/22/spoj-coins-bytelandian-gold-coins/
