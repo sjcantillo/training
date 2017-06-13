@@ -77,36 +77,73 @@ def check_link(chal_link, target_dir):
     return valid_resp
 
 
-def build_python(fname):
-    """Fn to check python sintax. Fn execs flake8 command and pylint command
-       and returns the exit code.
+def lang_linters(fname):
+    """Fn to check coding standars on differents languages. Fn execs the
+       corresponding linters and returns the exit code.
+
     Args:
-        fname (string) : path to py file.
+        fname (string) : path to file.
 
     Returns:
         Int: 0. If success.
 
     """
 
+    # Init out vars
+    lint_skip = False
+    flake_on = False
+    build_result = []
+    lint_result = 0
+    out_lint = 0
+    out_flake = 0
+    # File basename
+    fbase_name = os.path.basename(fname.rstr())
+    # Check python files
+    if fbase_name.endswith(".py"):
+        # Set out msg
+        out_msg = "py lint "
+        # Set command
+        lint_cmd = ["pylint"]
+        # Enable flake
+        flake_on = True
+        flake_cmd = ["flake8"]
+    # Check ruby files
+    elif fbase_name.endswith(".rb"):
+        # Set out msg
+        out_msg = "rb lint "
+        # Set command
+        lint_cmd = ["ruby-lint"]
+    # Check c files
+    elif fbase_name.endswith(".c"):
+        # Set out msg
+        out_msg = "c lint "
+        # Set command
+        lint_cmd = ["splint"]
+    else:
+        lint_skip = True
+        out_lint = 0
+        out_msg = "No linter for this language yet "
     # Prep commands
-    flake_cmd = ["flake8"]
     str_fname = str(fname)
-    flake_cmd.append(str_fname)
-    pylint_cmd = ["pylint"]
-    pylint_cmd.append(str_fname)
-    # Call flake8 and Pylint on python file
-    try:
-        out_flake = subprocess.call(flake_cmd, shell=False)
-        out_plint = subprocess.call(pylint_cmd, shell=False)
-    # Handle Errors
-    except OSError as oerr:
-        print "OSError > ", oerr.errno, " - ", oerr.strerror
-        out_flake = 1
-        out_plint = 1
-    # Sum absolute value of exit codes
-    output = abs(out_flake) + abs(out_plint)
-    # Return combined exit code
-    return output
+    lint_cmd.append(str_fname)
+    if not lint_skip:
+        # Exec command
+        try:
+            out_lint = subprocess.call(lint_cmd, shell=False)
+            if flake_on:
+                out_flake = subprocess.call(flake_cmd, shell=False)
+                lint_result += abs(out_flake)
+        # Handle Errors
+        except OSError as oerr:
+            print "OSError > ", oerr.errno, " - ", oerr.strerror
+            lint_result = 1
+    # Calc exit code
+    lint_result += abs(out_lint)
+    # Prep response
+    build_result.append(lint_result)
+    build_result.append(out_msg)
+    # Return exit code
+    return build_result
 
 
 def build_folders(target, source, env):
@@ -126,7 +163,7 @@ def build_folders(target, source, env):
     """
 
     # builder creation date
-    born_unix = time.mktime(date(2017, 06, 13).timetuple())
+    born_unix = time.mktime(date(2017, 06, 14).timetuple())
     # Prep directory location
     target_dir = os.path.dirname(str(target[0]))
     target_dir = env.Dir(target_dir)
@@ -135,10 +172,12 @@ def build_folders(target, source, env):
     target_file = open(str(target_f), 'w')
     # Init folder build vars
     link_build = 1
-    py_build = 0
+    lint_build = 0
     link_exist = False
     # Iterate through folder
     for fname in source:
+        # Get file last mod date
+        fdate = os.path.getmtime(fname.rstr())
         # Check LINK.txt files
         if os.path.basename(fname.rstr()) == "LINK.txt":
             link_exist = True
@@ -146,24 +185,21 @@ def build_folders(target, source, env):
             link_build = check_link(chal_link, target_dir)
             if link_build == 0:
                 target_file.write(chal_link + "- 200" + "\n")
-        # Check .py files
-        elif os.path.basename(fname.rstr()).endswith(".py"):
-            # Only check files created after builder
-            fdate = os.path.getmtime(fname.rstr())
-            if fdate > born_unix:
-                try:
-                    # Run linters
-                    py_build = build_python(fname)
-                    if py_build == 0:
-                        target_file.write(fname.rstr() + "- py success \n")
-                # Handle errors
-                except OSError as oerr:
-                    print "OSError > ", oerr.errno, " - ", oerr.strerror
-                    return 1
+        # Only check files created after builder
+        elif fdate > born_unix:
+            # Run lang linters
+            lint_build = lang_linters(fname)
+            if lint_build[0] == 0:
+                target_file.write(str(fname) + lint_build[1] + ": success \n")
             else:
-                # Omit build for old files
-                py_build = 0
-                target_file.write(fname.rstr() + "OLD - omiting linter \n")
+                # Linter failed
+                exit_code = str(lint_build[0])
+                print lint_build[1] + " Failed - exit code: " + exit_code
+                # Exit build with errors
+                return 1
+        else:
+            # Omit build for old files
+            target_file.write(fname.rstr() + "OLD - omiting linter \n")
     # Close file
     target_file.close()
     target_f = env.File(target_file)
@@ -171,13 +207,5 @@ def build_folders(target, source, env):
     if not link_exist:
         print target_file.name[:-10], " - LINK file does not exist - "
         return 1
-    # Check builds - LINK.txt
-    elif link_build != 0:
-        print " - LINK.txt Build Failed - "
-        return 1
-    # Check builds - python
-    elif py_build != 0:
-        print " - Python Build Failed - "
-        return 1
-    # All checks passed
+    # Exit successful build
     return 0

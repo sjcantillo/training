@@ -16,11 +16,11 @@ before_install:
 install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
   - gem install cucumber
+  - gem install ruby-lint
   - pip install pre-commit gitinspector
   - pip install scons
   - pip install requests
   - pip install flake8
-  - pip install pylint
 
 script:
   - ./precommit.sh
@@ -29,7 +29,7 @@ script:
 #  - ./similarity.sh typeb
   - ./nodata.sh
 #  - ./analysis.sh
-  - scons others --debug=explain
+  - scons others
   - scons gherkin
   - scons folders
   - ./total.sh
