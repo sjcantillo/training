@@ -41,7 +41,7 @@ def get_code(chal_link):
     if link_len > 0:
         try:
             # Make req and get HTTP status code
-            session_req = rsession.get(chal_link, timeout=10)
+            session_req = rsession.get(chal_link, timeout=12)
             stat_code = session_req.status_code
             # Raise error for invalid http status code - retry
             session_req.raise_for_status()
