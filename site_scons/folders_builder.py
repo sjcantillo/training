@@ -120,7 +120,7 @@ def lang_linters(fname):
         # Set command
         lint_cmd = ["splint"]
     else:
-        lint_skip =	True
+        lint_skip = True
         out_lint = 0
         out_msg = "No linter for this language yet "
     # Prep commands
@@ -171,7 +171,6 @@ def build_folders(target, source, env):
     # Make and open target file to write
     target_file = open(str(target_f), 'w')
     # Init folder build vars
-    #build_out_list = {"lnk_bld": 1, "py_bld": 0, "rb_bld": 0, "c_bld": 0}
     link_build = 1
     lint_build = 0
     link_exist = False
