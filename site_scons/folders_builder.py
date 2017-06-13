@@ -192,7 +192,7 @@ def build_folders(target, source, env):
     # Make and open target file to write
     target_file = open(str(target_f), 'w')
     # Init folder build vars
-    build_out_list = {"lnk_bld":1, "py_bld":0, "rb_bld":0}
+    build_out_list = {"lnk_bld": 1, "py_bld": 0, "rb_bld": 0}
     link_exist = False
     # Iterate through folder
     for fname in source:
