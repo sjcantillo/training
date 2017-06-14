@@ -17,7 +17,7 @@ before_install:
 install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
   - sudo apt-get install aptitude
-  - aptitude install shellcheck
+  - sudo aptitude install shellcheck
   - gem install cucumber
   - gem install ruby-lint
   - pip install pre-commit gitinspector
