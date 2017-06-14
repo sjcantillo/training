@@ -5,11 +5,12 @@ This module provides the builder function for all folders.
 
 """
 
+import os
 import os.path
-import subprocess
 import time
 from datetime import date
 import request_session
+from linter_module import *
 
 
 def check_whitelist(target_dir):
@@ -77,9 +78,28 @@ def check_link(chal_link, target_dir):
     return valid_resp
 
 
+def skp_bld(fname):
+    """Fn default to skip linter in case the linter for that language
+       has not been defined yet.
+
+    Args:
+        fname (string) : path to file.
+
+    Returns:
+        Int: 0. Always success.
+
+    """
+
+    # Prep result
+    out_msg = fname.rstr() + " Linter not yet implemented"
+    build_result = [0, out_msg]
+    # Return default result
+    return build_result
+
+
 def lang_linters(fname):
-    """Fn to check coding standars on differents languages. Fn execs the
-       corresponding linters and returns the exit code.
+    """Fn to check coding standars on differents languages. Fn checks the
+       file extention and call the corresponding linter.
 
     Args:
         fname (string) : path to file.
@@ -89,61 +109,17 @@ def lang_linters(fname):
 
     """
 
-    # Init out vars
-    lint_skip = False
-    flake_on = False
-    build_result = []
-    lint_result = 0
-    out_lint = 0
-    out_flake = 0
-    # File basename
-    fbase_name = os.path.basename(fname.rstr())
-    # Check python files
-    if fbase_name.endswith(".py"):
-        # Set out msg
-        out_msg = "py lint "
-        # Set command
-        lint_cmd = ["pylint"]
-        # Enable flake
-        flake_on = True
-        flake_cmd = ["flake8"]
-    # Check ruby files
-    elif fbase_name.endswith(".rb"):
-        # Set out msg
-        out_msg = "rb lint "
-        # Set command
-        lint_cmd = ["ruby-lint"]
-    # Check c files
-    elif fbase_name.endswith(".c"):
-        # Set out msg
-        out_msg = "c lint "
-        # Set command
-        lint_cmd = ["splint"]
-    else:
-        lint_skip = True
-        out_lint = 0
-        out_msg = "No linter for this language yet "
-    # Prep commands
-    str_fname = str(fname)
-    lint_cmd.append(str_fname)
-    if not lint_skip:
-        # Exec command
-        try:
-            out_lint = subprocess.call(lint_cmd, shell=False)
-            if flake_on:
-                out_flake = subprocess.call(flake_cmd, shell=False)
-                lint_result += abs(out_flake)
-        # Handle Errors
-        except OSError as oerr:
-            print "OSError > ", oerr.errno, " - ", oerr.strerror
-            lint_result = 1
-    # Calc exit code
-    lint_result += abs(out_lint)
-    # Prep response
-    build_result.append(lint_result)
-    build_result.append(out_msg)
-    # Return exit code
-    return build_result
+
+    # Init lint vars
+    lint_vars = {"py": python_linters.py_bld, "rb": ruby_linters.rb_bld,
+                 "c": clang_linters.clang_bld, "js": js_linters.js_bld,
+                 "sh": sh_linters.sh_bld, "skp": skp_bld}
+    # Extract ext
+    fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
+    # Call linter
+    lint_result = lint_vars.get(fname_ext, "skp")(fname)
+    # Return result
+    return lint_result
 
 
 def build_folders(target, source, env):
