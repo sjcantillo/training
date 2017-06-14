@@ -20,7 +20,6 @@ def rb_bld(fname):
 
     """
 
-
     # Init return var
     build_result = []
     # Set out msg

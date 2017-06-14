@@ -10,7 +10,11 @@ import os.path
 import time
 from datetime import date
 import request_session
-from linter_module import *
+from linter_module import python_linters
+from linter_module import ruby_linters
+from linter_module import clang_linters
+from linter_module import js_linters
+from linter_module import sh_linters
 
 
 def check_whitelist(target_dir):
