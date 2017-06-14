@@ -15,6 +15,7 @@ from linter_module import ruby_linters
 from linter_module import clang_linters
 from linter_module import js_linters
 from linter_module import sh_linters
+from linter_module import java_linters
 
 
 def check_whitelist(target_dir):
@@ -116,7 +117,7 @@ def lang_linters(fname):
     # Init lint vars
     lint_vars = {"py": python_linters.py_bld, "rb": ruby_linters.rb_bld,
                  "c": clang_linters.clang_bld, "js": js_linters.js_bld,
-                 "sh": sh_linters.sh_bld}
+                 "sh": sh_linters.sh_bld, "java": java_linters.java_bld}
     # Extract ext
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
     # Call linter
