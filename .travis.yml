@@ -37,6 +37,11 @@ script:
   - ./reports.sh
 
 addons:
+  apt:
+    sources:
+      - debian-sid
+    packages:
+      - shellcheck
   artifacts:
     debug: false
     bucket: travisatfluid
