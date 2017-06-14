@@ -15,7 +15,7 @@ Feature: Solve Easy Javascript
   Scenario: First failed intent
     Given I am authenticated as Audrum
     When ask for a user
-    And I don't know
+    And I do not know
     Then no solve the challenge
     But I conclude that I can review the source
 
