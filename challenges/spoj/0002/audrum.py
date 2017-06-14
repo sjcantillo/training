@@ -2,7 +2,7 @@
 
 
 def primes(val1, val2):
-    """Confirm is if Prime"""
+    """Verify is if Prime"""
     if val2 < 2:
         return []
     confirm = [True] * (val2 + 1)

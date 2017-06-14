@@ -2,3 +2,4 @@ https://raw.githubusercontent.com/zsiciarz/euler.rs/master/src/solutions/problem
 https://raw.githubusercontent.com/japaric/euler_criterion.rs/master/problems/004/004.rs
 https://github.com/nayuki/Project-Euler-solutions/blob/master/java/p004.java
 
+
