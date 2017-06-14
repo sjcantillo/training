@@ -13,6 +13,6 @@ while read line || [[ -n "$line" ]]; do
     #ARRAY=$(echo $line | grep -o .)
     #echo "${ARRAY[@]}"
     #arrLen=${#ARRAY[@]}
-    #echo $arrLen
+    #echo $arrLenc
 
 done < $1
