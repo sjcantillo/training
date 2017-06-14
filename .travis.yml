@@ -11,10 +11,11 @@ python:
 sudo: required
 
 before_install:
+  - sudo add-apt-repository universe
   - sudo apt-get update
 
 install:
-  - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
+  - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es shellcheck
   - gem install cucumber
   - gem install ruby-lint
   - pip install pre-commit gitinspector
@@ -37,11 +38,6 @@ script:
   - ./reports.sh
 
 addons:
-  apt:
-    sources:
-      - debian-sid
-    packages:
-      - shellcheck
   artifacts:
     debug: false
     bucket: travisatfluid
