@@ -1,0 +1,2 @@
+http://xoptutorials.com/index.php/2017/01/01/spojarith2/
+https://github.com/darrensun/OJ-Solutions/blob/master/src/com/darrensun/spoj/arith2/Main.java

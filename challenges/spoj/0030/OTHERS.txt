@@ -1,0 +1,3 @@
+https://rishisnotes.wordpress.com/spoj_blinnet/
+https://github.com/viraj071/SPOJ/blob/master/BLINNET%20-%20Bytelandian%20Blingors%20Network/BLINNET.cpp
+https://github.com/lewin/SPOJ/blob/master/blinnet.java

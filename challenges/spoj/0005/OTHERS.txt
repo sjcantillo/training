@@ -1,0 +1,4 @@
+http://spoj-solutions.blogspot.com/2014/10/palin-next-palindrome.html
+https://gist.github.com/furlox/4359354
+https://github.com/darrensun/OJ-Solutions/blob/master/src/com/darrensun/spoj/palin/Main.java
+http://love-python.blogspot.com/2010/11/python-program-to-find-next-palindrome.html
