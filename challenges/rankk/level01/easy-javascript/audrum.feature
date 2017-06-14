@@ -1,6 +1,6 @@
 # language: es
 
-Característica: Resolver reto Easy Javascript
+Caracteristica: Resolver reto Easy Javascript
   Con codigo Javascript
   Del sitio rankk.org
   De la categoria Level 1
