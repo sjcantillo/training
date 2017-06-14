@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Linter Handler
 
-This module provides linters to check c files and coding standards.
+This module provides linters to check c language files and coding standards.
 
 """
 
