@@ -4,7 +4,7 @@ while read line || [[ -n "$line" ]]; do
     #echo $line
     mod=$((line%2))
     if [ "$mod" -eq "1" ]
-    then 
+    then
         echo "0"
     else
         echo "1"
@@ -13,6 +13,6 @@ while read line || [[ -n "$line" ]]; do
     #ARRAY=$(echo $line | grep -o .)
     #echo "${ARRAY[@]}"
     #arrLen=${#ARRAY[@]}
-    #echo $arrLenc
+    #echo $arrLen
 
 done < $1
