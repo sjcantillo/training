@@ -1,6 +1,6 @@
 # language: en
 
-Feature Solve Easy Javascript
+Feature: Solve Easy Javascript
   From page rankk.org
   From category Level 1
   With my username Audrum
