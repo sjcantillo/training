@@ -12,7 +12,6 @@ sudo: required
 
 before_install:
   - sudo apt-get update
-  - sudo dpkg --get-selections
 
 install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
