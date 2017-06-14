@@ -113,11 +113,11 @@ def lang_linters(fname):
     # Init lint vars
     lint_vars = {"py": python_linters.py_bld, "rb": ruby_linters.rb_bld,
                  "c": clang_linters.clang_bld, "js": js_linters.js_bld,
-                 "sh": sh_linters.sh_bld, "skp": skp_bld}
+                 "sh": sh_linters.sh_bld}
     # Extract ext
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
     # Call linter
-    lint_result = lint_vars.get(fname_ext, "skp")(fname)
+    lint_result = lint_vars.get(fname_ext, skp_bld)(fname)
     # Return result
     return lint_result
 
