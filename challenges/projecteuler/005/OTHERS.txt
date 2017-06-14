@@ -1,2 +1,4 @@
 https://raw.githubusercontent.com/zsiciarz/euler.rs/master/src/solutions/problem5.rs
+https://github.com/nayuki/Project-Euler-solutions/blob/master/java/p005.java
+
 
