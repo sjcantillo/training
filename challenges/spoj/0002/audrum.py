@@ -14,7 +14,7 @@ def primes(val1, val2):
                 confirm[j] = False
     for i in range(val1, val2 + 1):
         if confirm[i]:
-            print(i)
+            print i
 
 
 def calcular():
@@ -28,7 +28,7 @@ def calcular():
                 int(val[i][1]) - int(val[i][0]) <= 100000):
             primes(int(val[i][0]), int(val[i][1]))
             if i != number - 1:
-                print("")
+                print ""
 
 
 calcular()
