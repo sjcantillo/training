@@ -12,7 +12,7 @@ sudo: required
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install util-linux
+  - sudo dpkg --get-selections | grep hold
 
 install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
