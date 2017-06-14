@@ -8,6 +8,7 @@ Feature: Solve Pequenas Grandes Diferencias challenge
   Background:
     Given the fact that I am registered in site yashira
     And I have Windows 7 Operating System
+    And I added a test case
 	And I have 010 Editor
 
   Scenario: First failed attempt
