@@ -16,9 +16,7 @@ before_install:
 
 install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
-  - sudo apt-get install cabal-install
-  - cabal update
-  - cabal install shellcheck
+  - sudo apt-get remove cabal-install
   - gem install cucumber
   - gem install ruby-lint
   - pip install pre-commit gitinspector
