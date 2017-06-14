@@ -1,27 +1,27 @@
 # language: es
 
-Característica: Resolver reto Easy Javascript
-  Con código Javascript
+CaracterÃ­stica: Resolver reto Easy Javascript
+  Con codigo Javascript
   Del sitio rankk.org
-  De la categoría Level 1
+  De la categoria Level 1
   Con mi usuario Audrum
 
   Antecedentes:
     Dado estoy registrado en el sitio rankk.org
-    Y tengo el sistema operativo Windows versión 10
-    Y he instalado el software Firefox versión 53
+    Y tengo el sistema operativo Windows version 10
+    Y he instalado el software Firefox version 53
     Y tengo acceso a internet
     Y he resuelto el reto Easy Javascript
 
   Escenario: Primer intento fallido
     Dado que estoy autenticado con mi usuario Audrum
-    Cuando la página solicita un usuario
+    Cuando la pagina solicita un usuario
     Y no lo conozco
     Entonces no resuelvo el reto
-    Pero concluyo que puedo observar el código fuente
+    Pero concluyo que puedo observar el codigo fuente
 
-  Escenario: Solución exitosa
+  Escenario: Solucion exitosa
     Dado que estoy auntenticado con mi usuario Audrum
-    Cuando observo el código fuente
+    Cuando observo el cÃ³digo fuente
     Y obtengo el usuario
     Entonces resuelvo el reto
