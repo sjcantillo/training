@@ -113,7 +113,6 @@ def lang_linters(fname):
 
     """
 
-
     # Init lint vars
     lint_vars = {"py": python_linters.py_bld, "rb": ruby_linters.rb_bld,
                  "c": clang_linters.clang_bld, "js": js_linters.js_bld,
