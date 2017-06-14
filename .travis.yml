@@ -12,7 +12,7 @@ sudo: required
 
 before_install:
   - sudo apt-get update
-  - sudo dpkg --get-selections | grep hold
+  - sudo dpkg --get-selections
 
 install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es
@@ -38,11 +38,6 @@ script:
   - ./reports.sh
 
 addons:
-  apt:
-    sources:
-      - debian-sid
-    packages:
-      - shellcheck
   artifacts:
     debug: false
     bucket: travisatfluid
