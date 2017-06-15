@@ -5,9 +5,9 @@ def main():
     """Genera multiplicacion de los digitos"""
     valores = []
     j = 0
-    casos = int(input(""))
+    casos = int(raw_input(""))
     while j < casos:
-        primero = int(input(""))
+        primero = int(raw_input(""))
         valores.append(primero)
         j += 1
     for k in valores:
