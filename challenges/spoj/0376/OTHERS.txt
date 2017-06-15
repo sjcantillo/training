@@ -1,0 +1,2 @@
+https://github.com/marioyc/Online-Judge-Solutions/blob/master/SPOJ/Classical/376%20-%20A%20concrete%20simulation.cpp
+http://xoptutorials.com/index.php/2017/01/01/spojacs/

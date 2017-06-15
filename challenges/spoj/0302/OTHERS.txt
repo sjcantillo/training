@@ -1,0 +1,2 @@
+http://codingsiksha.blogspot.com/2015/04/spoj-canton-count-on-cantor.html
+http://manishjindal.github.io/SPOJ%20Solutions/solution.html?filename=countOnCantor.cpp
