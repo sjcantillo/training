@@ -1,1 +1,2 @@
+https://github.com/nayuki/Project-Euler-solutions/blob/master/java/p039.java
 https://raw.githubusercontent.com/sile/euler.rs/master/euler_01/src/problem039.rs
