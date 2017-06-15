@@ -1,1 +1,2 @@
 https://raw.githubusercontent.com/sile/euler.rs/master/euler_01/src/problem026.rs
+https://github.com/nayuki/Project-Euler-solutions/blob/master/java/p026.java
