@@ -3,7 +3,7 @@
 
 def main():
     """Solicita el valor"""
-    hasta = int(input("Digite el numero: "))
+    hasta = int(raw_input("Digite el numero: "))
     sumatoria(hasta)
 
 

@@ -1,2 +1,2 @@
-https://github.com/nayuki/Project-Euler-solutions/blob/master/java/p037.java
+https://raw.githubusercontent.com/nayuki/Project-Euler-solutions/master/java/p037.java
 https://raw.githubusercontent.com/sile/euler.rs/master/euler_01/src/problem037.rs
