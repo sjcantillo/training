@@ -25,7 +25,7 @@ def java_bld(fname):
     # Set out msg
     out_msg = "java lint - checkstyle "
     # Set command
-    lint_cmd = ["checkstyle"]
+    lint_cmd = ["java"]
     lint_cmd.append("-jar")
     lint_cmd.append("site_scons/linter_module/resources/"
                     "checkstyle-6.15-all.jar")
