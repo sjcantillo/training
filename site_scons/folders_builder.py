@@ -10,12 +10,7 @@ import os.path
 import time
 from datetime import date
 import request_session
-from linter_module import python_linters
-from linter_module import ruby_linters
-from linter_module import clang_linters
-from linter_module import js_linters
-from linter_module import sh_linters
-from linter_module import java_linters
+import all_linters
 
 
 def check_whitelist(target_dir):
@@ -83,25 +78,6 @@ def check_link(chal_link, target_dir):
     return valid_resp
 
 
-def skp_bld(fname):
-    """Fn default to skip linter in case the linter for that language
-       has not been defined yet.
-
-    Args:
-        fname (string) : path to file.
-
-    Returns:
-        Int: 0. Always success.
-
-    """
-
-    # Prep result
-    out_msg = fname.rstr() + " Linter not yet implemented"
-    build_result = [0, out_msg]
-    # Return default result
-    return build_result
-
-
 def lang_linters(fname):
     """Fn to check coding standars on differents languages. Fn checks the
        file extention and call the corresponding linter.
@@ -114,14 +90,26 @@ def lang_linters(fname):
 
     """
 
+    # Init linter config
+    pylint_conf = ["py lint", ["pylint", "flake8"]]
+    rblint_conf = ["ruby lint", ["ruby-lint"]]
+    clint_conf = ["c lang lint", ["splint"]]
+    jslint_conf = ["js lint", ["gjslint"]]
+    shlint_conf = ["sh lint", ["shellcheck"]]
+    jvlint_conf = ["java lint", ["java -jar site_scons/resources/"
+                                 "checkstyle-6.15-all.jar -c "
+                                 "/sun_checks.xml"]]
+    default_conf = ["skp"]
     # Init lint vars
-    lint_vars = {"py": python_linters.py_bld, "rb": ruby_linters.rb_bld,
-                 "c": clang_linters.clang_bld, "js": js_linters.js_bld,
-                 "sh": sh_linters.sh_bld, "java": java_linters.java_bld}
+    lint_vars = {"py": pylint_conf, "rb": rblint_conf,
+                 "c": clint_conf, "js": jslint_conf,
+                 "sh": shlint_conf, "java": jvlint_conf}
     # Extract ext
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
+    # Get lint params
+    lint_params = lint_vars.get(fname_ext, default_conf)
     # Call linter
-    lint_result = lint_vars.get(fname_ext, skp_bld)(fname)
+    lint_result = all_linters.generic_linter(lint_params, fname)
     # Return result
     return lint_result
 
