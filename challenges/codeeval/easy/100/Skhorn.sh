@@ -4,7 +4,7 @@ while read line || [[ -n "$line" ]]; do
     #echo $line
     mod=$((line%2))
     if [ "$mod" -eq "1" ]
-    then 
+    then
         echo "0"
     else
         echo "1"
