@@ -97,7 +97,7 @@ def lang_linters(fname):
     jslint_conf = ["js lint", ["gjslint"]]
     shlint_conf = ["sh lint", ["shellcheck"]]
     jvlint_conf = ["java lint", ["java -jar site_scons/resources/"
-                   "checkstyle-6.15-all.jar"]]
+                   "checkstyle-6.15-all.jar -c /sun_checks.xml"]]
     default_conf = ["skp"]
     # Init lint vars
     lint_vars = {"py": pylint_conf, "rb": rblint_conf,
