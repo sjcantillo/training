@@ -1,2 +1,3 @@
-http://codingsiksha.blogspot.com/2015/04/spoj-canton-count-on-cantor.html
-http://manishjindal.github.io/SPOJ%20Solutions/solution.html?filename=countOnCantor.cpp
+https://raw.githubusercontent.com/cacophonix/SPOJ/master/CANTON.cpp
+https://raw.githubusercontent.com/t3nsor/SPOJ/master/canton.cpp
+https://raw.githubusercontent.com/srikanthmalipatel/Spoj-Problems/master/CANTON-3451698-src.c

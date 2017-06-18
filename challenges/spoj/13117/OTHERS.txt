@@ -1,1 +1,1 @@
-http://spoj-solutions.blogspot.com/2014/02/pucmm334-white-hats.html
+https://raw.githubusercontent.com/sus-g/spoj/master/pucmm334.cpp

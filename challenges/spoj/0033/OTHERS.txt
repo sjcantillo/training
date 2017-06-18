@@ -1,2 +1,2 @@
-https://github.com/venkatrn/SPOJ/blob/master/trip.cpp
-http://mewtomat.blogspot.com/2016/03/spoj-trip-trip.html
+https://raw.githubusercontent.com/venkatrn/SPOJ/master/trip.cpp
+https://raw.githubusercontent.com/cacophonix/SPOJ/master/TRIP.cpp

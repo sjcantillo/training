@@ -1,3 +1,2 @@
-https://gist.github.com/Vijay13/5047796
-http://iamayushanand.blogspot.com/p/expression-treesspoj-cmexp.html
-http://xoptutorials.com/index.php/2017/01/01/spojcmexpr/
+https://gist.githubusercontent.com/Vijay13/5047796/raw/515c43ddbca58c41eaeafa1ceb8cd63a0624ef69/CMEXPR.py
+https://raw.githubusercontent.com/cacophonix/SPOJ/master/CMEXPR.cpp
