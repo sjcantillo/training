@@ -1,2 +1,1 @@
-https://www.quora.com/How-do-I-solve-the-Particular-Palindromes-PARTPALI-problem-on-SPOJ
-https://github.com/mukel/ProgrammingContests/blob/master/OldStuff/SPOJ/PARTPALI.CPP
+https://raw.githubusercontent.com/mukel/ProgrammingContests/master/OldStuff/SPOJ/PARTPALI.CPP

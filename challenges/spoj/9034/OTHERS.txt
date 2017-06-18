@@ -1,1 +1,2 @@
-https://www.snip2code.com/Snippet/1027458/SPOJ-SOLUTION---Help-Tohu
+https://raw.githubusercontent.com/t3nsor/SPOJ/master/tohu.cpp
+https://raw.githubusercontent.com/srikanthmalipatel/Spoj-Problems/master/TOHU-6459960-src.c

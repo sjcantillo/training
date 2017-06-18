@@ -1,1 +1,1 @@
-http://xoptutorials.com/index.php/2017/01/01/spojarith/
+https://raw.githubusercontent.com/mohit-me/Spoj/master/ARITH-6332111-src.c

@@ -1,2 +1,1 @@
-https://github.com/marioyc/Online-Judge-Solutions/blob/master/SPOJ/Classical/8%20-%20Complete%20the%20Sequence!.cpp
-https://capcs.wordpress.com/2011/04/27/spoj-8/
+https://raw.githubusercontent.com/marioyc/Online-Judge-Solutions/master/SPOJ/Classical/8%20-%20Complete%20the%20Sequence!.cpp

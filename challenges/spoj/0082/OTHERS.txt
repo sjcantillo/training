@@ -1,1 +1,1 @@
-http://xoptutorials.com/index.php/2017/01/01/spojeasypie/
+https://raw.githubusercontent.com/cacophonix/SPOJ/master/EASYPIE.cpp

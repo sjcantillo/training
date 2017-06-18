@@ -1,2 +1,3 @@
-http://xoptutorials.com/index.php/2017/01/01/spojarith2/
-https://github.com/darrensun/OJ-Solutions/blob/master/src/com/darrensun/spoj/arith2/Main.java
+https://raw.githubusercontent.com/darrensun/OJ-Solutions/master/src/com/darrensun/spoj/arith2/Main.java
+https://raw.githubusercontent.com/cacophonix/SPOJ/master/ARITH2.cpp
+https://raw.githubusercontent.com/t3nsor/SPOJ/master/arith2.cpp

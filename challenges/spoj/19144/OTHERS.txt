@@ -1,1 +1,1 @@
-http://spoj-solutions.blogspot.com/2014/04/ins14c-digo-plays-with-numbers.html
+https://raw.githubusercontent.com/Guarav/SPOJ/master/INS14C.cpp

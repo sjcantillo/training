@@ -1,3 +1,1 @@
-https://github.com/jiteshsunhala/spoj-solutions/blob/master/NOVICE43.cpp
-http://xoptutorials.com/index.php/2017/01/01/spojnovice43/
-https://drive.google.com/open?id=0B85G-7T8fDE_TWt2RjdRVmVsTkU
+https://raw.githubusercontent.com/jiteshsunhala/spoj-solutions/master/NOVICE43.cpp

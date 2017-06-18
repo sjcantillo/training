@@ -1,1 +1,1 @@
-https://github.com/Neroysq/Neroysq-SPOJ/blob/master/Codes/DIRVS.cpp
+https://raw.githubusercontent.com/Neroysq/Neroysq-SPOJ/master/Codes/DIRVS.cpp

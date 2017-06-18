@@ -1,3 +1,2 @@
-https://github.com/arikj/spoj/blob/master/afs.cpp
-http://codegeeeks.blogspot.com/2014/11/sieve-of-erastothenes-based-spoj.html
-http://xoptutorials.com/index.php/2017/01/01/spojafs/
+https://raw.githubusercontent.com/arikj/spoj/master/afs.cpp
+https://raw.githubusercontent.com/UtkarshPathrabe/Competetive-Coding/master/SPOJ%20Solutions/AFS.c
