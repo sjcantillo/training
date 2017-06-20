@@ -1,5 +1,5 @@
 /**
- * Way Too Long Words
+ * Way Too Long Wordstoo
  * Abbreviate the word.<br>
  * This abbreviation is made like this: we write down the first and the last letter of a 
  * word and between them we write the number of letters between the first and the last letters. 
