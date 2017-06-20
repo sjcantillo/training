@@ -5,12 +5,13 @@ cache:
   directories:
     - build
 
+sudo: required
 dist: trusty
+
+group: edge
 
 python:
   - "2.7"
-
-sudo: required
 
 before_install:
   - sudo apt-get update
@@ -29,13 +30,10 @@ install:
 script:
   - ./precommit.sh
   - ./url.sh
-#  - ./similarity.sh typea
-#  - ./similarity.sh typeb
   - ./nodata.sh
-#  - ./analysis.sh
-  - scons others
-  - scons gherkin
   - scons folders
+  - scons gherkin
+  - scons others
   - ./total.sh
   - ./reports.sh
 
