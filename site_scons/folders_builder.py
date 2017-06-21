@@ -101,12 +101,14 @@ def lang_linters(fname):
                                  "/sun_checks.xml"]]
     hslint_conf = ["hs lint", ["hlint"]]
     cpplint_conf = ["cpp lint", ["cppcheck"]]
+    phplint_conf = ["php lint", ["php -l"]]
     default_conf = ["skp"]
     # Init lint vars
     lint_vars = {"py": pylint_conf, "rb": rblint_conf,
                  "c": clint_conf, "js": jslint_conf,
                  "sh": shlint_conf, "java": jvlint_conf,
-                 "hs": hslint_conf, "cpp": cpplint_conf}
+                 "hs": hslint_conf, "cpp": cpplint_conf,
+                 "php": phplint_conf}
     # Extract ext
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
     # Get lint params
