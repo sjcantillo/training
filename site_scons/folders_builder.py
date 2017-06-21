@@ -99,11 +99,13 @@ def lang_linters(fname):
     jvlint_conf = ["java lint", ["java -jar site_scons/resources/"
                                  "checkstyle-6.15-all.jar -c "
                                  "/sun_checks.xml"]]
+    hslint_conf = ["hs lint", ["hlint"]]
     default_conf = ["skp"]
     # Init lint vars
     lint_vars = {"py": pylint_conf, "rb": rblint_conf,
                  "c": clint_conf, "js": jslint_conf,
-                 "sh": shlint_conf, "java": jvlint_conf}
+                 "sh": shlint_conf, "java": jvlint_conf,
+                 "hs": hslint_conf}
     # Extract ext
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
     # Get lint params
@@ -131,7 +133,7 @@ def build_folders(target, source, env):
     """
 
     # builder creation date
-    born_unix = time.mktime(date(2017, 06, 19).timetuple())
+    born_unix = time.mktime(date(2017, 06, 21).timetuple())
     # Prep directory location
     target_dir = os.path.dirname(str(target[0]))
     target_dir = env.Dir(target_dir)
