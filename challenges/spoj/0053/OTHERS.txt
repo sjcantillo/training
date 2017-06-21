@@ -1,0 +1,2 @@
+https://raw.githubusercontent.com/SharmaManish/Spoj/master/kamil%20challenge.cpp
+https://raw.githubusercontent.com/dbarbosa/Coding/master/spoj/KAMIL.c
