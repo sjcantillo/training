@@ -14,12 +14,14 @@ python:
   - "2.7"
 
 before_install:
+  - sudo add-apt-repository ppa:webupd8team/atom -y
   - sudo apt-get update
 
 install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es aptitude checkstyle
-  - sudo apt-get -q -y install hlint
+  - sudo apt-get -q -y install hlint atom
   - sudo aptitude install shellcheck
+  - sudo apm install linter-eastwood
   - gem install cucumber
   - gem install ruby-lint
   - pip install pre-commit gitinspector

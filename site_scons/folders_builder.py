@@ -100,12 +100,13 @@ def lang_linters(fname):
                                  "checkstyle-6.15-all.jar -c "
                                  "/sun_checks.xml"]]
     hslint_conf = ["hs lint", ["hlint"]]
+    cljlint_conf = ["clj lint", ["linter-eastwood"]]
     default_conf = ["skp"]
     # Init lint vars
     lint_vars = {"py": pylint_conf, "rb": rblint_conf,
                  "c": clint_conf, "js": jslint_conf,
                  "sh": shlint_conf, "java": jvlint_conf,
-                 "hs": hslint_conf}
+                 "hs": hslint_conf, "clj": cljlint_conf}
     # Extract ext
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
     # Get lint params
