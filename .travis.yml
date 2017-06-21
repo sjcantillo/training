@@ -18,7 +18,7 @@ before_install:
   - sudo apt-get update
 
 install:
-  - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es aptitude checkstyle
+  - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es aptitude checkstyle cppcheck
   - sudo apt-get -q -y install hlint atom
   - sudo aptitude install shellcheck
   - sudo apm install linter-eastwood
