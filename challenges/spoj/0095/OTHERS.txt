@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/mintuhouse/spoj-solutions/master/95-stpar.cpp
