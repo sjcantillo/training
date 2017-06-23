@@ -36,7 +36,7 @@ Feature: LAMP Security CTF4
     And I see a function to post a blog entry
     And I post a js script
     And I see the xss I injected
-	And I try to then inject some php so that the server can execute it
+    And I try to then inject some php so that the server can execute it
     But I do not succeed
     Then I decide to see what else that injection can give me
 
