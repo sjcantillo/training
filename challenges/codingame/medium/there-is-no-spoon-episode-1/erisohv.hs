@@ -34,9 +34,9 @@ main = do
             when (elem == '0') $ do 
                 putStr(show j ++ " " ++ show i ++ " ")
                 let neighborn = getHorizontalNeighborn (j+1) width line 
-                if neighborn /= (-1) then putStr( show neighborn ++ " " ++ show i ++ " " ) else putStr "-1 -1 "
+                putStr(if neighborn /= (-1) then show neighborn ++ " " ++ show i ++ " " else "-1 -1 ") 
                 
                 let neighborn = getVericalNeighborn (i+1) j height matrix
-                if neighborn /= (-1) then putStr(show j ++ " " ++ show neighborn ++ " ") else putStr "-1 -1 "
+                putStr(if neighborn /= (-1) then show j ++ " " ++ show neighborn ++ " " else "-1 -1 ") 
                 
                 putStrLn " "
