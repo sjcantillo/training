@@ -21,7 +21,7 @@ stringToBinary string i
 
 chuckNorrisEncode :: String -> Int -> Char -> String
 chuckNorrisEncode binaryArray i preBit
-     | i <= (length binaryArray - 1) && binaryArray!!i == preBit =  "0" ++ chuckNorrisEncode binaryArray (i+1) (binaryArray!!i)
+     | i <= (length binaryArray - 1) && binaryArray!!i == preBit =  '0' : chuckNorrisEncode binaryArray (i+1) (binaryArray!!i)
      | i <= (length binaryArray - 1) && binaryArray!!i /= preBit && binaryArray!!i == '0' = " 00 0" ++  chuckNorrisEncode binaryArray (i+1) (binaryArray!!i)
      | i <= (length binaryArray - 1) && binaryArray!!i /= preBit && binaryArray!!i == '1' = " 0 0" ++  chuckNorrisEncode binaryArray (i+1) (binaryArray!!i)
      | i == length binaryArray = ""
