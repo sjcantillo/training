@@ -151,6 +151,8 @@ def build_folders(target, source, env):
     for fname in source:
         # Get file last mod date
         fdate = os.path.getmtime(fname.rstr())
+        # Has file changed
+        fname_changed = fname.changed()
         # Check LINK.txt files
         if os.path.basename(fname.rstr()) == "LINK.txt":
             link_exist = True
@@ -158,8 +160,8 @@ def build_folders(target, source, env):
             link_build = check_link(chal_link, target_dir)
             if link_build == 0:
                 target_file.write(chal_link + "- 200" + "\n")
-        # Only check files created after builder
-        elif fdate > born_unix:
+        # Only check files created after builder which have changed
+        elif fdate > born_unix and fname_changed:
             # Run lang linters
             lint_build = lang_linters(fname)
             if lint_build[0] == 0:
