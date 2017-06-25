@@ -7,8 +7,6 @@ This module provides the builder function for all folders.
 
 import os
 import os.path
-import time
-from datetime import date
 import request_session
 import all_linters
 
@@ -147,8 +145,6 @@ def build_folders(target, source, env):
     link_exist = False
     # Iterate through folder
     for fname in source:
-        # Get file last mod date
-        fdate = os.path.getmtime(fname.rstr())
         # Has file been modified
         fname_changed = fname.changed()
         # Is file new
