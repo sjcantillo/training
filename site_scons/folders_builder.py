@@ -7,8 +7,6 @@ This module provides the builder function for all folders.
 
 import os
 import os.path
-import time
-from datetime import date
 import request_session
 import all_linters
 
@@ -135,8 +133,6 @@ def build_folders(target, source, env):
 
     """
 
-    # builder creation date
-    born_unix = time.mktime(date(2017, 06, 22).timetuple())
     # Prep directory location
     target_dir = os.path.dirname(str(target[0]))
     target_dir = env.Dir(target_dir)
@@ -149,8 +145,11 @@ def build_folders(target, source, env):
     link_exist = False
     # Iterate through folder
     for fname in source:
-        # Get file last mod date
-        fdate = os.path.getmtime(fname.rstr())
+        # Has file been modified
+        fname_changed = fname.changed()
+        # Is file new
+        fname_inf = fname.get_stored_info().__getstate__()
+        fname_new = fname_inf["ninfo"].__getstate__().get("csig", "new_file")
         # Check LINK.txt files
         if os.path.basename(fname.rstr()) == "LINK.txt":
             link_exist = True
@@ -158,8 +157,8 @@ def build_folders(target, source, env):
             link_build = check_link(chal_link, target_dir)
             if link_build == 0:
                 target_file.write(chal_link + "- 200" + "\n")
-        # Only check files created after builder
-        elif fdate > born_unix:
+        # Only check files created after builder which have changed
+        elif fname_changed or fname_new == "new_file":
             # Run lang linters
             lint_build = lang_linters(fname)
             if lint_build[0] == 0:
