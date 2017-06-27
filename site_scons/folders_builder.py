@@ -128,7 +128,7 @@ def check_csig(fname):
         Bool: True. If file has changed or is new.
 
     """
- 
+
     # Is file new
     fname_inf = fname.get_stored_info().__getstate__()
     fname_new = fname_inf["ninfo"].__getstate__().get("csig", "new_file")
