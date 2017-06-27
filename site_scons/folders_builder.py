@@ -117,6 +117,32 @@ def lang_linters(fname):
     return lint_result
 
 
+def check_csig(fname):
+    """Fn to check for changes in files. Fn checks the
+       previous and current md5 signature and compares them.
+
+    Args:
+        fname (string) : path to file.
+
+    Returns:
+        Bool: True. If file has changed or is new.
+
+    """
+
+    # Is file new
+    fname_inf = fname.get_stored_info().__getstate__()
+    fname_new = fname_inf["ninfo"].__getstate__().get("csig", "new_file")
+    # Get current md5 signature
+    fname_csig = fname.get_content_hash()
+    # Init response var
+    fname_changed = False
+    # Check for changes or new file
+    if fname_new == "new_file" or fname_new != fname_csig:
+        fname_changed = True
+    # Return response
+    return fname_changed
+
+
 def build_folders(target, source, env):
     """Fn to build folders. Fn iterates through all files in the folder and
        checks the existence and validity of the LINK file and runs the linters
@@ -146,10 +172,7 @@ def build_folders(target, source, env):
     # Iterate through folder
     for fname in source:
         # Has file been modified
-        fname_changed = fname.changed()
-        # Is file new
-        fname_inf = fname.get_stored_info().__getstate__()
-        fname_new = fname_inf["ninfo"].__getstate__().get("csig", "new_file")
+        fname_changed = check_csig(fname)
         # Check LINK.txt files
         if os.path.basename(fname.rstr()) == "LINK.txt":
             link_exist = True
@@ -158,7 +181,7 @@ def build_folders(target, source, env):
             if link_build == 0:
                 target_file.write(chal_link + "- 200" + "\n")
         # Only check files created after builder which have changed
-        elif fname_changed or fname_new == "new_file":
+        elif fname_changed:
             # Run lang linters
             lint_build = lang_linters(fname)
             if lint_build[0] == 0:
