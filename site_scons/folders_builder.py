@@ -117,7 +117,7 @@ def lang_linters(fname):
     return lint_result
 
 
-def check_csig (fname):
+def check_csig(fname):
     """Fn to check for changes in files. Fn checks the
        previous and current md5 signature and compares them.
 
