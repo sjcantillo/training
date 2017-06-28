@@ -13,34 +13,33 @@ group: edge
 python:
   - "2.7"
 
+go:
+  - "1.7"
+
 before_install:
-  skip
+  - sudo add-apt-repository ppa:webupd8team/atom -y
+  - sudo apt-get update -qq
+  - go get github.com/golang/lint/golint
 
 install:
-  skip
+  - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es aptitude checkstyle cppcheck -qq
+  - sudo apt-get -y install hlint atom  -qq
+  - sudo aptitude install shellcheck
+  - sudo apm install linter-eastwood
+  - gem install cucumber ruby-lint
+  - pip install pre-commit gitinspector scons requests flake8 https://github.com/google/closure-linter/zipball/master
 
 jobs:
   include:
-    - stage: Add third party PPAs
-      script: sudo add-apt-repository ppa:webupd8team/atom -y
-    - stage: Pre install requirements
-      script: sudo apt-get update -qq
-    - stage: Install dependencies
-      script: sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es aptitude checkstyle cppcheck golint -qq
-    - script: sudo apt-get -y install hlint atom  -qq
-    - script: sudo aptitude install shellcheck
-    - script: sudo apm install linter-eastwood
-    - script: gem install cucumber ruby-lint
-    - script: pip install pre-commit gitinspector scons requests flake8 https://github.com/google/closure-linter/zipball/master
     - stage: Precommit
       script: ./precommit.sh
       script: ./url.sh
       script: ./nodata.sh
-    - stage: SCons Folder-check
+    - stage: SCons Folder-build
       script: scons -j 4 folders -Q
     - stage: SCons Gherkin-build
       script: scons gherkin -Q
-    - stage: SCons others-check
+    - stage: SCons others-build
       script: scons others -Q
 
 addons:
