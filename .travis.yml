@@ -21,11 +21,12 @@ install:
 
 jobs:
   include:
-    - stage: Pre install requirements
+    - stage: Add third party PPAs
       script: sudo add-apt-repository ppa:webupd8team/atom -y
-    - script: sudo apt-get update -qq
+    - stage: Pre install requirements
+      script: sudo apt-get update -qq
     - stage: Install dependencies
-      script: sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es aptitude checkstyle cppcheck -qq
+      script: sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es aptitude checkstyle cppcheck golint -qq
     - script: sudo apt-get -y install hlint atom  -qq
     - script: sudo aptitude install shellcheck
     - script: sudo apm install linter-eastwood
