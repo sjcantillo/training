@@ -112,10 +112,8 @@ def lang_linters(fname):
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
     # Get lint params
     lint_params = lint_vars.get(fname_ext, default_conf)
-    # Call linter
-    lint_result = all_linters.generic_linter(lint_params, fname)
-    # Return result
-    return lint_result
+    # Call linter and return
+    return all_linters.generic_linter(lint_params, fname)
 
 
 def check_csig(fname):
