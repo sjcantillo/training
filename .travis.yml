@@ -33,8 +33,8 @@ jobs:
   include:
     - stage: Precommit
       script: ./precommit.sh
-      script: ./url.sh
-      script: ./nodata.sh
+    - script: ./url.sh
+    - script: ./nodata.sh
     - stage: SCons Folder-build
       script: scons -j 4 folders -Q
     - stage: SCons Gherkin-build
