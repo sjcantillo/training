@@ -100,21 +100,20 @@ def lang_linters(fname):
     hslint_conf = ["hs lint", ["hlint"]]
     cpplint_conf = ["cpp lint", ["cppcheck"]]
     phplint_conf = ["php lint", ["php -l"]]
+    golint_conf = ["go lint", ["golint"]]
     default_conf = ["skp"]
     # Init lint vars
     lint_vars = {"py": pylint_conf, "rb": rblint_conf,
                  "c": clint_conf, "js": jslint_conf,
                  "sh": shlint_conf, "java": jvlint_conf,
                  "hs": hslint_conf, "cpp": cpplint_conf,
-                 "php": phplint_conf}
+                 "php": phplint_conf, "go": golint_conf}
     # Extract ext
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
     # Get lint params
     lint_params = lint_vars.get(fname_ext, default_conf)
-    # Call linter
-    lint_result = all_linters.generic_linter(lint_params, fname)
-    # Return result
-    return lint_result
+    # Call linter and return
+    return all_linters.generic_linter(lint_params, fname)
 
 
 def check_csig(fname):
