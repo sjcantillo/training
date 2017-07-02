@@ -20,6 +20,7 @@ before_install:
   - sudo add-apt-repository ppa:webupd8team/atom -y
   - sudo apt-get update -qq
   - go get github.com/golang/lint/golint
+  - pip install pre-commit gitinspector
 
 install:
   - sudo apt-get install simhash tree pylint splint gitstats aspell aspell-es aptitude checkstyle cppcheck -qq
@@ -27,20 +28,21 @@ install:
   - sudo aptitude install shellcheck
   - sudo apm install linter-eastwood
   - gem install cucumber ruby-lint
-  - pip install pre-commit gitinspector scons requests flake8 https://github.com/google/closure-linter/zipball/master
+  - pip install scons requests flake8 https://github.com/google/closure-linter/zipball/master
 
 jobs:
   include:
     - stage: Precommit
-      script: ./precommit.sh
-    - script: ./url.sh
-    - script: ./nodata.sh
-    - stage: SCons Folder-build
-      script: scons -j 4 folders -Q
-    - stage: SCons Gherkin-build
-      script: scons gherkin -Q
-    - stage: SCons others-build
-      script: scons others -Q
+      install: skip
+      script:
+        - ./precommit.sh
+        - ./url.sh
+        - ./nodata.sh
+    - stage: SCons build
+      script:
+        - scons -j 4 folders -Q
+        - scons gherkin -Q
+        - scons others -Q
 
 addons:
   artifacts:
