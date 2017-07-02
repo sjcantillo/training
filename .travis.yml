@@ -13,6 +13,9 @@ group: edge
 python:
   - "2.7"
 
+rust:
+  - nightly
+
 go:
   - "1.7"
 
@@ -27,6 +30,7 @@ install:
   - sudo apt-get -y install hlint atom  -qq
   - sudo aptitude install shellcheck
   - sudo apm install linter-eastwood
+  - curl -sSf https://static.rust-lang.org/rustup.sh | sh
   - gem install cucumber ruby-lint
   - pip install scons requests flake8 https://github.com/google/closure-linter/zipball/master
 
