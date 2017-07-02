@@ -101,13 +101,15 @@ def lang_linters(fname):
     cpplint_conf = ["cpp lint", ["cppcheck"]]
     phplint_conf = ["php lint", ["php -l"]]
     golint_conf = ["go lint", ["golint"]]
+    rslint_conf = ["rust lint", ["rustc -D warnings"]]
     default_conf = ["skp"]
     # Init lint vars
     lint_vars = {"py": pylint_conf, "rb": rblint_conf,
                  "c": clint_conf, "js": jslint_conf,
                  "sh": shlint_conf, "java": jvlint_conf,
                  "hs": hslint_conf, "cpp": cpplint_conf,
-                 "php": phplint_conf, "go": golint_conf}
+                 "php": phplint_conf, "go": golint_conf,
+                 "rs": rslint_conf}
     # Extract ext
     fname_ext = os.path.splitext(fname.rstr())[1].translate(None, '.')
     # Get lint params
