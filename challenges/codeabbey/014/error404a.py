@@ -10,7 +10,7 @@ input data:
 % 11"""
 
 
-def modularCalculator(data):
+def modularcalculator(data):
     """Calculate the modulo"""
     temp = data.split("\n")
     seed = int(temp[0])
