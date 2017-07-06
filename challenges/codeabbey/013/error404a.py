@@ -12,5 +12,5 @@ def sumawsdloop(data):
         for dig in range(0, len(tlist[inpt])):
             weight += (int(tlist[inpt][dig]) * (dig + 1))
         res += str(weight) + " "
-        weight = 0;
+        weight = 0
     print res
