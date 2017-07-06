@@ -18,9 +18,9 @@ def modularCalculator(data):
     res = 0
     for i in range(1, len(temp)):
         tlist = temp[i].split(" ")
-        if (tlist[0] == "+"):
+        if tlist[0] == "+":
             seed += int(tlist[1])
-        elif (tlist[0] == "*"):
+        elif tlist[0] == "*":
             seed *= int(tlist[1])
         else:
             res = seed % int(tlist[1])
