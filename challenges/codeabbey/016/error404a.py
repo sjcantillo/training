@@ -12,7 +12,7 @@ def avg(data):
     res = ""
     tlist = []
     acum = 0
-    for icont in range(0,int(temp[0])):
+    for icont in range(0, int(temp[0])):
         tlist = temp[icont+1].split(" ")
         for numb in tlist:
             acum += int(numb)
