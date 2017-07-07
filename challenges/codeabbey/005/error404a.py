@@ -6,7 +6,7 @@ def menortriple(data):
     tlist = data.split("\n")
     temp = []
     res = ""
-    for i in range(0, int(t[0])):
+    for i in range(0, int(tlist[0])):
         temp = tlist[i+1].split(" ")
         if int(temp[0]) < int(temp[1]):
             if int(temp[0]) < int(temp[2]):
