@@ -8,7 +8,7 @@ import java.util.List;
  * @author Erika
  *
  */
-public final class erisohv {
+public final class Erisohv {
 
     /**
      * Infinity value.
@@ -18,7 +18,7 @@ public final class erisohv {
     /**
      * Empty constructor.
      */
-    private erisohv() {
+    private Erisohv() {
     }
 
     /**
