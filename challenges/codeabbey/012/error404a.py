@@ -10,7 +10,6 @@ input data:
 def moduletimediference(data):
     """Calculate the difference between tow dates of the same month"""
     temp = data.split("\n")
-    time = 0
     tlist = []
     nuday1 = 0
     nuhour1 = 0
@@ -26,7 +25,7 @@ def moduletimediference(data):
     hours = 0
     minutes = 0
     segs = 0
-    daytime = 60  * 60 * 24
+    daytime = 60 * 60 * 24
     hourtime = 60 * 60
     for i in range(0, int(temp[0])):
         tlist = temp[i+1].split(" ")
@@ -38,10 +37,11 @@ def moduletimediference(data):
         nuhour2 = int(tlist[1]) * hourtime
         numin2 = int(tlist[2]) * 60
         tdif2 = nuday2 + nuhour2 + numin2 + int(tlist[3])
-        timeDif =  tdif1 - tdif2 
+        timeDif = tdif1 - tdif2 
         days = timeDif // daytime
         hours = (timeDif % daytime) // hourtime
         minutes = (timeDif % hourtime) // 60
         segs = timeDif % 60
-        res += "(" + str(days) + " " + str(hours) + " " + str(minutes) + " " + str(segs) + ") "
+        res += "(" + str(days) + " " + str(hours) 
+        res += " " + str(minutes) + " " + str(segs) + ") "
     print res
