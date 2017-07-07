@@ -1,6 +1,6 @@
 """This function sum tow number"""
 
 
-def sum(a,b):
+def sum(numa, numb):
     """Sum a and b"""
-    return a + b
+    return numa + numb
