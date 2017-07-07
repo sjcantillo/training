@@ -12,8 +12,8 @@ def sumadigitloop(data):
     for i in range(0, int(temp[0])):
         tlist = temp[i+1].split(" ")
         opres = (int(tlist[0]) * int(tlist[1])) + int(tlist[2])
-        for i in str(opres):
-            digsum += int(i)
+        for j in str(opres):
+            digsum += int(j)
         res += str(digsum) + " "
         digsum = 0
     print res
