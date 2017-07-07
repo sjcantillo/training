@@ -11,28 +11,26 @@ def moduletimediference(data):
     """Calculate the difference between tow dates of the same month"""
     temp = data.split("\n")
     tlist = []
-    nuday1 = 0
-    nuhour1 = 0
-    numin1 = 0
-    tdif1 = 0
-    tdif2 = 0
+    nuday = 0
+    nuhour = 0
+    numin = 0
+    tdif = 0
     res = ""
     daytime = 60 * 60 * 24
     hourtime = 60 * 60
     for i in range(0, int(temp[0])):
         tlist = temp[i+1].split(" ")
-        nuday1 = int(tlist[4]) * daytime
-        nuhour1 = int(tlist[5]) * hourtime
-        numin1 = int(tlist[6]) * 60
-        tdif1 = nuday1 + nuhour1 + numin1 + int(tlist[7])
-        nuday1 = int(tlist[0]) * daytime
-        nuhour1 = int(tlist[1]) * hourtime
-        numin1 = int(tlist[2]) * 60
-        tdif2 = nuday1 + nuhour1 + numin1 + int(tlist[3])
-        tdif1 = tdif1 - tdif2 
-        nuday1 = tdif1 // daytime
-        nuhour1 = (tdif1 % daytime) // hourtime
-        numin1 = (tdif1 % hourtime) // 60
-        res += "(" + str(nuday1) + " " + str(nuhour1) 
-        res += " " + str(numin1) + " " + str(tdif1 % 60) + ") "
+        nuday = int(tlist[4]) * daytime
+        nuhour = int(tlist[5]) * hourtime
+        numin = int(tlist[6]) * 60
+        tdif = nuday + nuhour + numin + int(tlist[7])
+        nuday = int(tlist[0]) * daytime
+        nuhour = int(tlist[1]) * hourtime
+        numin = int(tlist[2]) * 60
+        tdif = tdif - nuday + nuhour + numin + int(tlist[3])
+        nuday = tdif // daytime
+        nuhour = (tdif % daytime) // hourtime
+        numin = (tdif % hourtime) // 60
+        res += "(" + str(nuday) + " " + str(nuhour)
+        res += " " + str(numin) + " " + str(tdif % 60) + ") "
     print res
