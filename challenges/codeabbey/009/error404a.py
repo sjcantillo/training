@@ -3,7 +3,7 @@ to build triangle and for which it is not"""
 
 
 def triangles(data):
-    """Determine if is possible to build triangle""" 
+    """Determine if is possible to build triangle"""
     temp = data.split("\n")
     res = ""
     tlist = []
