@@ -11,8 +11,8 @@ def arithmeticprogression(data):
     nrep = 0
     for i in range(0, int(temp[0])):
         tlist = temp[i+1].split(" ")
-        for x in range(0, int(tlist[2])):
-            nrep += int(tlist[0]) + (x * int(tlist[1]))
+        for idx in range(0, int(tlist[2])):
+            nrep += int(tlist[0]) + (idx * int(tlist[1]))
         res += str(nrep) + " "
         nrep = 0
     print res
