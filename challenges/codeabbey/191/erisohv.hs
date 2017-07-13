@@ -63,13 +63,5 @@ main = do
         let minPos = getOptimalPosition weights 0 0 isMinValuePosition
         let maxPos = getOptimalPosition weights 0 0 isMaxValuePosition
 
-
-        if minPos == 0 then
-           putStr (line ++ " ")
-        else
-           putStr (getMinValue weights stringW minPos ++ " ")
-
-        if maxPos == 0 then
-           putStr (line ++ " ")
-        else
-           putStr (getValue stringW 0 maxPos stringW isMax ++ " ")
+        putStr (if minPos == 0 then line ++ " " else getMinValue weights stringW minPos ++ " ")
+        putStr (if maxPos == 0 then line ++ " " else getValue stringW 0 maxPos stringW isMax ++ " ")
