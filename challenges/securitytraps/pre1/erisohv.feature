@@ -1,6 +1,6 @@
 # language: es
 
-Característica: Resolver retos Pre-level
+Característica: Resolver retos "Pre-level"
   Del sitio http://www.securitytraps.pl
   De la categoría Pre-level
 
