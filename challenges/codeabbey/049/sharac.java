@@ -1,5 +1,3 @@
-package sharac;
-
 import java.util.*;
 public class sharac {
     public static void main(String[] args) {
