@@ -17,16 +17,16 @@ public class Sharac {
             int lon = st.countTokens();
             for (int j = 0; j <= lon - 1; j++) {
                 String partida = st.nextToken();
-                exp1=partida.equals("SP");
-                exp2=partida.equals("PR");
-                exp3=partida.equals("RS");
-                exp4=partida.equals("PS");
-                exp5=partida.equals("RP");
-                exp6=partida.equals("SR");
-                if (exp1|| exp2 || exp3) {
+                exp1 = partida.equals("SP");
+                exp2 = partida.equals("PR");
+                exp3 = partida.equals("RS");
+                exp4 = partida.equals("PS");
+                exp5 = partida.equals("RP");
+                exp6 = partida.equals("SR");
+                if (exp1 || exp2 || exp3) {
                     jugador1++;
                 }
-                if (exp4|| exp5 || exp6) {
+                if (exp4 || exp5 || exp6) {
                     jugador2++;
                 }
             }
