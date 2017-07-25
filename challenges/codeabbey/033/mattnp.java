@@ -1,8 +1,9 @@
-package solution;
+package mattnp;
 
 import java.util.Scanner;
 
-public class Solution {
+public class Mattnp {
+
   public static void main(String[] args) {
     final int p = 46;
     final int h = 128;
