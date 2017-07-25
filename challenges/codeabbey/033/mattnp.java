@@ -1,4 +1,4 @@
-package mattnp;
+package solution;
 
 import java.util.Scanner;
 
