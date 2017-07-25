@@ -1,20 +1,22 @@
-import java.util.*;
+package mattnp;
 
-class Solution
-{
-    public static void main (String[] args)
-    {
-        Scanner in = new Scanner(System.in);
-        String message = "";
-        int n;
-        while((n = in.nextInt()) != 46) {
-            if (Integer.bitCount(n)%2 == 0) {
-                if(n >= 128) {
-                    n -= 128;
-                }
-                message += (char)n;
-            }
+import java.util.Scanner;
+
+public class Solution {
+  public static void main(String[] args) {
+    final int p = 46;
+    final int h = 128;
+    Scanner in = new Scanner(System.in);
+    String message = "";
+    int n;
+    while ((n = in.nextInt()) != p) {
+      if (Integer.bitCount(n) % 2 == 0) {
+        if (n >= h) {
+          n -= h;
         }
-        System.out.print(message+".");
+        message += (char) n;
+      }
     }
+    System.out.print(message + ".");
+  }
 }
