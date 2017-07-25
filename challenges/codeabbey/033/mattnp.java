@@ -3,7 +3,11 @@ package solution;
 import java.util.Scanner;
 
 public class Solution {
-    public static void main(String[] args) {
+
+    private Solution() {
+    }
+
+    public static void main(final String[] args) {
         final int p = 46;
         final int h = 128;
         Scanner in = new Scanner(System.in);
