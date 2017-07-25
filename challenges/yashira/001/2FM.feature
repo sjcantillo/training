@@ -1,3 +1,5 @@
+# language: es
+
 Característica: Resolver reto 1
   Del sitio yashira.org
   De la categoría Cracking
