@@ -1,7 +1,3 @@
-/**
- *
- * @author Mateo Noreña
- */
 package mattnp;
 
 import java.util.Scanner;
@@ -9,10 +5,10 @@ import java.util.Scanner;
 /**
  * @author Mateo Noreña
  */
-public class Mattnp {
+public final class Mattnp {
 
     /**
-     * @param
+     * @param empty
      */
     private Mattnp() {
     }
