@@ -1,29 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author Mateo Noreña
  */
 package mattnp;
 
 import java.util.Scanner;
 
 /**
- *
  * @author Mateo Noreña
  */
 public class Mattnp {
 
     /**
+     * @param
+     */
+    private Mattnp() {
+    }
+
+    /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
         for (int i = 0; i < n; i++) {
             double a = in.nextDouble();
             double b = in.nextDouble();
             double c = in.nextDouble();
-            double d = Math.pow(b, 2) - 4 * a * c;
+            final int f = 4;
+            double d = Math.pow(b, 2) - (f * a * c);
             double x1;
             double x2;
             String x1S;
@@ -41,8 +46,9 @@ public class Mattnp {
                 x1S = Integer.toString((int) x1);
                 x2S = Integer.toString((int) x2);
             } else {
-                x1S = Integer.toString((int) b1) + "+" + Integer.toString((int) d1) + "i";
-                x2S = Integer.toString((int) b1) + "-" + Integer.toString((int) d1) + "i";
+                String b1S = Integer.toString((int) b1);
+                x1S = b1S + "+" + Integer.toString((int) d1) + "i";
+                x2S = b1S + "-" + Integer.toString((int) d1) + "i";
             }
             System.out.print(x1S + " " + x2S);
             if (i != n - 1) {
@@ -50,5 +56,4 @@ public class Mattnp {
             }
         }
     }
-
 }
