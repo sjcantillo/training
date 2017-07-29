@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Solution for Life is Simple (056) from CodeAbbey.
+ *
  * @author Mateo Noreña
  */
 final class Mattnp {
@@ -45,6 +46,8 @@ final class Mattnp {
             }
         }
         for (int t = 0; t < turns; t++) {
+            born.clear();
+            die.clear();
             for (int i = 1; i < m - 1; i++) {
                 for (int j = 1; j < n - 1; j++) {
                     char c = grid[i][j];
@@ -58,8 +61,6 @@ final class Mattnp {
                         }
                     }
                     int[] coords = {i, j};
-                    born.clear();
-                    die.clear();
                     boolean condToDie = neighs < minDie || neighs > maxDie;
                     boolean condToBorn = neighs == vBorn;
                     if (c == 'X' && condToDie) {
@@ -70,12 +71,12 @@ final class Mattnp {
                     }
                 }
             }
-            die.stream().forEach((eD) -> {
+            for(int[] eD : die) {
                 grid[eD[0]][eD[1]] = '-';
-            });
-            born.stream().forEach((eB) -> {
+            }
+            for(int[] eB : born) {
                 grid[eB[0]][eB[1]] = 'X';
-            });
+            }
             int organisms = 0;
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n; j++) {
