@@ -71,10 +71,10 @@ final class Mattnp {
                     }
                 }
             }
-            for(int[] eD : die) {
+            for (int[] eD : die) {
                 grid[eD[0]][eD[1]] = '-';
             }
-            for(int[] eB : born) {
+            for (int[] eB : born) {
                 grid[eB[0]][eB[1]] = 'X';
             }
             int organisms = 0;
