@@ -1,7 +1,6 @@
 object Solution extends App {
   val nPeople = scala.io.StdIn.readLine.toInt
   var words = Array("under", "normal", "over", "obese")
-
   for (a <- 1 to nPeople) {
     val values = scala.io.StdIn.readLine.split(" ").map(_.toDouble)
     val bmi = bodyMassIndex(values(0), values(1))
