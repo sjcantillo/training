@@ -6,10 +6,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print(AlphabetSoup(scanner.nextLine()));
+		System.out.print(alphabetSoup(scanner.nextLine()));
 	}
 	
-	public static String AlphabetSoup(String string) {
+	public static String alphabetSoup(String string) {
 
 		char cadenaCaractares[] = string.toCharArray();
 		Arrays.sort(cadenaCaractares);
