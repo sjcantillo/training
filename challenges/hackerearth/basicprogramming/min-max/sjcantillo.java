@@ -1,21 +1,17 @@
+package com.fluid;
+
 import java.util.Scanner;
 
-/**
- * Clase con la solucion del reto Max  y Min
- * 
- * @author silvio.cantillo
- *
- */
 public class Main {
 
-	/**
-	 * Metodo que retonar el Maximo o Minimo
-	 * 
-	 * @param numbers
-	 * @param size
-	 * @param isMax
-	 * @return
-	 */
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		Long size = Long.parseLong(scanner.nextLine());
+		String numbers = scanner.nextLine();
+		System.out.print(calculateMinMax(numbers, size, false) + " "
+				+ calculateMinMax(numbers, size, true));
+	}
+	
 	public static Long calculateMinMax(String numbers, Long size, boolean isMax) {
 		Long calculateNumber = new Long(0);
 		Long sumNumbers = new Long(0);
@@ -33,15 +29,6 @@ public class Main {
 		}
 		return calculateNumber;
 	}
-
-	/**
-	 * Metodo que retorna la comparación con respecto a maximo o minmo
-	 * 
-	 * @param currentNumber
-	 * @param possibleNumber
-	 * @param isMax
-	 * @return
-	 */
 	public static Long compareNumbers(Long currentNumber, Long possibleNumber,
 			boolean isMax) {
 		Long newNumber;
@@ -53,13 +40,5 @@ public class Main {
 					|| (currentNumber == 0) ? possibleNumber : currentNumber;
 		}
 		return newNumber;
-	}
-
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		Long size = Long.parseLong(scanner.nextLine());
-		String numbers = scanner.nextLine();
-		System.out.print(calculateMinMax(numbers, size, false) + " "
-				+ calculateMinMax(numbers, size, true));
 	}
 }

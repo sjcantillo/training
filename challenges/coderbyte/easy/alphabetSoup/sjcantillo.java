@@ -1,18 +1,14 @@
+package com.fluid;
 import java.util.Arrays;
 import java.util.Scanner;
-/**
- * Clase con la solucion de Reto AlphabetSoup
- * 
- * @author silvio.cantillo
- *
- */
+
 public class Main {
-	/**
-	 * Metodo para Odernar carateres de un String
-	 * 
-	 * @param string
-	 * @return
-	 */
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print(AlphabetSoup(scanner.nextLine()));
+	}
+	
 	public static String AlphabetSoup(String string) {
 
 		char cadenaCaractares[] = string.toCharArray();
@@ -25,9 +21,5 @@ public class Main {
 
 	}
 
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.print(AlphabetSoup(scanner.nextLine()));
-	}
 
 }
