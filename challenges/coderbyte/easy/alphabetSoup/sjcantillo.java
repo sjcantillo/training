@@ -1,10 +1,11 @@
 /**
  * Clase con la solucion de Reto AlphabetSoup
- * 
+ *
  * @author silvio.cantillo
  *
  */
 public class Main {
+	
 	/**
 	 * Private constructor.
 	 */
@@ -13,14 +14,14 @@ public class Main {
 
 	/**
 	 * Metodo para Odernar carateres de un String
-	 * 
+	 *
 	 * @param string
 	 *            cadena de numero
 	 * @return cadena ordenada
 	 */
-	public static String AlphabetSoup(final String string) {
+	public static String alphabetSoup(final String string) {
 
-		char cadenaCaractares[] = string.toCharArray();
+		char[] cadenaCaractares = string.toCharArray();
 		java.util.Arrays.sort(cadenaCaractares);
 		StringBuilder stringBuilder = new StringBuilder();
 		for (char caracter : cadenaCaractares) {
@@ -31,11 +32,11 @@ public class Main {
 
 	/**
 	 * Main method.
-	 * 
+	 *
 	 * @param args Argumentos de Usuario
 	 */
 	public static void main(final String[] args) {
 		java.util.Scanner scanner = new java.util.Scanner(System.in);
-		System.out.print(AlphabetSoup(scanner.nextLine()));
+		System.out.print(alphabetSoup(scanner.nextLine()));
 	}
 }
