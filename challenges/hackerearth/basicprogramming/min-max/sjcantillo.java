@@ -82,6 +82,6 @@ public final class Main {
 		String numbers = scanner.nextLine();
 		Long numeroMinimo = calculateMinMax(numbers, size, false);
 		Long numeroMaximo = calculateMinMax(numbers, size, true);
-		System.out.print(numeroMinimo + " " + numeroMaximo);
-		}
+        System.out.print(numeroMinimo + " " + numeroMaximo);
+    }
 }
