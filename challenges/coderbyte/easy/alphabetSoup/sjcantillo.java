@@ -1,12 +1,11 @@
 package core;
-
 /**
- * Clase con la solucion de Reto AlphabetSoup
+ * Clase para resolver el reto de AlphabetSoup.
  *
  * @author silvio.cantillo
  * @version 1.0
  */
-final public class Main {
+public final class Main {
 
 	/**
 	 * Private constructor.
@@ -15,7 +14,7 @@ final public class Main {
 	}
 
 	/**
-	 * Metodo para Odernar carateres de un String
+	 * Metodo para retornar la cadena.
 	 *
 	 * @param string
 	 *            cadena de numero
