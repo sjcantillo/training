@@ -78,10 +78,10 @@ public final class Main {
      */
     public static void main(final String[] args) {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-		Long size = Long.parseLong(scanner.nextLine());
-		String numbers = scanner.nextLine();
-		Long numeroMinimo = calculateMinMax(numbers, size, false);
-		Long numeroMaximo = calculateMinMax(numbers, size, true);
+        Long size = Long.parseLong(scanner.nextLine());
+        String numbers = scanner.nextLine();
+        Long numeroMinimo = calculateMinMax(numbers, size, false);
+        Long numeroMaximo = calculateMinMax(numbers, size, true);
         System.out.print(numeroMinimo + " " + numeroMaximo);
     }
 }
