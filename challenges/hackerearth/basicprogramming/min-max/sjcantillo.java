@@ -34,7 +34,7 @@ public final class Main {
                         sumNum += Long.parseLong(arrayNumbers[j]);
                     }
                 }
-                calculateNumber=compareNumbers(calculateNumber, sumNum, isMax);
+                calculateNumber = compareNumbers(calculateNumber, sumNum, isMax);
             }
         }
         return calculateNumber;
@@ -55,13 +55,13 @@ public final class Main {
             final Long possibleNum, final boolean isMax) {
         Long newNumber;
         if (isMax) {
-			if(possibleNum > currentNum) {
+			if (possibleNum > currentNum) {
 				newNumber = possibleNum;
 			} else {
 				newNumber = currentNum;
-			}           
+			}     
         } else {
-			if((possibleNum < currentNum) || (currentNum == 0)) {
+			if ((possibleNum < currentNum) || (currentNum == 0)) {
 				newNumber = possibleNum;
 			} else {
 				newNumber = currentNum;
@@ -80,7 +80,7 @@ public final class Main {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         Long size = Long.parseLong(scanner.nextLine());
         String numbers = scanner.nextLine();
-		Long numeroMinimo = calculateMinMax(numbers, size, false); 
+		Long numeroMinimo = calculateMinMax(numbers, size, false);
 		Long numeroMaximo = calculateMinMax(numbers, size, true);
         System.out.print(numeroMaximo + " " + numeroMaximo);
     }
