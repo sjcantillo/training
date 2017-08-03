@@ -9,8 +9,7 @@ package core;
 public final class Main {
     /** Private constructor. */
     private Main() {
-    }
-    
+    }    
     /**
      * Metodo para calcular Max o Min.
      *
@@ -22,7 +21,7 @@ public final class Main {
      *            booelan para saber si es max o min
      * @return retorna el valor min o max
      */
-    public static Long calculateMinMax(final String numbers, final Long size, 
+    public static Long calculateMinMax(final String numbers, final Long size,
             final boolean isMax) {
         Long calculateNumber = new Long(0);
         Long sumNumbers = new Long(0);
@@ -52,14 +51,21 @@ public final class Main {
      *            booelan para saber si es max o min
      * @return retorna el numero
      */
-    public static Long compareNumbers(final Long currentNumber, 
+    public static Long compareNumbers(final Long currentNumber,
             final Long possibleNumber, final boolean isMax) {
         Long newNumber;
         if (isMax) {
-            newNumber = possibleNumber > currentNumber ? possibleNumber : currentNumber;
+			if(possibleNumber > currentNumber){
+				newNumber = possibleNumber;
+			}else{
+				newNumber = currentNumber;
+			}            
         } else {
-            newNumber = (possibleNumber < currentNumber)
-                    || (currentNumber == 0) ? possibleNumber : currentNumber;
+			if((possibleNumber < currentNumber) || (currentNumber == 0)){
+				newNumber = possibleNumber;
+			}else{
+				newNumber = currentNumber;
+			}
         }
         return newNumber;
     }
@@ -74,7 +80,7 @@ public final class Main {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         Long size = Long.parseLong(scanner.nextLine());
         String numbers = scanner.nextLine();
-        System.out.print(calculateMinMax(numbers, size, false) 
-                + " " + calculateMinMax(numbers, size, true));
+		String resultado=calculateMinMax(numbers, size, false)+" "+calculateMinMax(numbers, size, true);
+        System.out.print(resultado);
     }
 }
