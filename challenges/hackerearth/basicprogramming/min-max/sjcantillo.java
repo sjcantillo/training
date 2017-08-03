@@ -61,7 +61,7 @@ public final class Main {
                          newNumber = currentNum;
                     }
         } else {
-			if ((possibleNum < currentNum) || (currentNum == 0)) {
+            if ((possibleNum < currentNum) || (currentNum == 0)) {
                          newNumber = possibleNum;
                     } else {
                          newNumber = currentNum;
