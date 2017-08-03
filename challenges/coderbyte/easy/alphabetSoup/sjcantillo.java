@@ -1,12 +1,11 @@
-package core;
 /**
  * Clase para resolver el reto de AlphabetSoup.
  *
  * @author silvio.cantillo
  * @version 1.0
  */
+package core;
 public final class Main {
-
 	/**
 	 * Private constructor.
 	 */
