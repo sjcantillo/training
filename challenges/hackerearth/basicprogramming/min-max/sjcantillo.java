@@ -78,7 +78,7 @@ public final class Main {
      */
     public static void main(final String[] args) {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        Long size = Long.parseLong(scanner.nextLine());
-        String numbers = scanner.nextLine();		
-    }
+		Long size = Long.parseLong(scanner.nextLine());
+		String numbers = scanner.nextLine();
+		}
 }
