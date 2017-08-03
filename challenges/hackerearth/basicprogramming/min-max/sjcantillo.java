@@ -80,8 +80,7 @@ public final class Main {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         Long size = Long.parseLong(scanner.nextLine());
         String numbers = scanner.nextLine();
-		Long numeroMinimo = calculateMinMax(numbers, size, false);
-		Long numeroMaximo = calculateMinMax(numbers, size, true);
+		Long numeroMinimo = calculateMinMax(numbers, size, false);		Long numeroMaximo = calculateMinMax(numbers, size, true);
         System.out.print(numeroMaximo + " " + numeroMaximo);
     }
 }
