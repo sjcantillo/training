@@ -7,7 +7,7 @@ package core;
  */
 public final class Main {
     /** Private constructor. */
-    private Main() {        
+    private Main() {
     }
 
     /**
@@ -18,7 +18,8 @@ public final class Main {
      * @param isMax booelan para saber si es max o min
      * @return retorna el valor min o max
      */
-    public static Long calculateMinMax(final String numbers,final Long size,final boolean isMax) {
+    public static Long calculateMinMax(final String numbers, final Long size,
+	final boolean isMax) {
         Long calculateNumber = new Long(0);
         Long sumNumbers = new Long(0);
         String[] arrayNumbers = numbers.split(" ");
@@ -26,8 +27,9 @@ public final class Main {
             for (Integer i = 0; i < size; i++) {
                 sumNumbers = new Long(0);
                 for (Integer j = 0; j < size; j++) {
-                    if (j != i)
-                        sumNumbers += Long.parseLong(arrayNumbers[j]);
+                    if (j != i){
+						sumNumbers += Long.parseLong(arrayNumbers[j]);	
+					}                        
                 }
                 calculateNumber = compareNumbers(calculateNumber, sumNumbers,
                         isMax);
@@ -43,8 +45,9 @@ public final class Main {
      * @param isMax booelan para saber si es max o min
      * @return retorna el numero
      */
-    public static Long compareNumbers(final Long currentNumber,final Long possibleNumber,
-            final boolean isMax) {
+    public static Long compareNumbers(final Long currentNumber, 
+			 final Long possibleNumber,
+             final boolean isMax) {
         Long newNumber;
         if (isMax) {
             newNumber = possibleNumber > currentNumber ? possibleNumber
@@ -54,7 +57,7 @@ public final class Main {
                     || (currentNumber == 0) ? possibleNumber : currentNumber;
         }
         return newNumber;
-    }   
+    }
     /**
      * Main method.
      *
