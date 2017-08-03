@@ -23,7 +23,7 @@ public final class Main {
      */
     public static Long calculateMinMax(final String numbers, final Long size,
             final boolean isMax) {
-        Long calculateNumber = new Long(0);
+        Long calculateNum = new Long(0);
         Long sumNum = new Long(0);
         String[] arrayNumbers = numbers.split(" ");
         if (arrayNumbers.length >= size) {
@@ -34,10 +34,10 @@ public final class Main {
                         sumNum += Long.parseLong(arrayNumbers[j]);
                     }
                 }
-                calculateNumber = compareNumbers(calculateNumber, sumNum, isMax);
+                calculateNum = compareNumbers(calculateNum, sumNum, isMax);
             }
         }
-        return calculateNumber;
+        return calculateNum;
     }
 
     /**
@@ -54,12 +54,12 @@ public final class Main {
     public static Long compareNumbers(final Long currentNum,
             final Long possibleNum, final boolean isMax) {
         Long newNumber;
-        if (isMax) {
+		if (isMax) {
 			if (possibleNum > currentNum) {
 				newNumber = possibleNum;
 			} else {
 				newNumber = currentNum;
-			}     
+			}
         } else {
 			if ((possibleNum < currentNum) || (currentNum == 0)) {
 				newNumber = possibleNum;
