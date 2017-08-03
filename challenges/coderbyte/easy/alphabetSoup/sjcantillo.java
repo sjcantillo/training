@@ -1,11 +1,13 @@
+package core;
+
 /**
  * Clase con la solucion de Reto AlphabetSoup
  *
  * @author silvio.cantillo
- *
+ * @version 1.0
  */
-public class Main {
-	
+final public class Main {
+
 	/**
 	 * Private constructor.
 	 */
@@ -33,7 +35,8 @@ public class Main {
 	/**
 	 * Main method.
 	 *
-	 * @param args Argumentos de Usuario
+	 * @param args
+	 *            Argumentos de Usuario
 	 */
 	public static void main(final String[] args) {
 		java.util.Scanner scanner = new java.util.Scanner(System.in);
