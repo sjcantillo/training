@@ -9,7 +9,7 @@ package core;
 public final class Main {
     /** Private constructor. */
     private Main() {
-    }    
+    }
     /**
      * Metodo para calcular Max o Min.
      *
@@ -24,17 +24,17 @@ public final class Main {
     public static Long calculateMinMax(final String numbers, final Long size,
             final boolean isMax) {
         Long calculateNumber = new Long(0);
-        Long sumNumbers = new Long(0);
+        Long sumNum = new Long(0);
         String[] arrayNumbers = numbers.split(" ");
         if (arrayNumbers.length >= size) {
             for (Integer i = 0; i < size; i++) {
-                sumNumbers = new Long(0);
+                sumNum = new Long(0);
                 for (Integer j = 0; j < size; j++) {
                     if (j != i) {
-                        sumNumbers += Long.parseLong(arrayNumbers[j]);
+                        sumNum += Long.parseLong(arrayNumbers[j]);
                     }
                 }
-                calculateNumber = compareNumbers(calculateNumber, sumNumbers, isMax);
+                calculateNumber=compareNumbers(calculateNumber, sumNum, isMax);
             }
         }
         return calculateNumber;
@@ -43,28 +43,28 @@ public final class Main {
     /**
      * Metodo para comparar los numeros.
      *
-     * @param currentNumber
+     * @param currentNum
      *            numeroActual
-     * @param possibleNumber
+     * @param possibleNum
      *            posible numero que reemplazara
      * @param isMax
      *            booelan para saber si es max o min
      * @return retorna el numero
      */
-    public static Long compareNumbers(final Long currentNumber,
-            final Long possibleNumber, final boolean isMax) {
+    public static Long compareNumbers(final Long currentNum,
+            final Long possibleNum, final boolean isMax) {
         Long newNumber;
         if (isMax) {
-			if(possibleNumber > currentNumber){
-				newNumber = possibleNumber;
-			}else{
-				newNumber = currentNumber;
-			}            
+			if(possibleNum > currentNum) {
+				newNumber = possibleNum;
+			} else {
+				newNumber = currentNum;
+			}           
         } else {
-			if((possibleNumber < currentNumber) || (currentNumber == 0)){
-				newNumber = possibleNumber;
-			}else{
-				newNumber = currentNumber;
+			if((possibleNum < currentNum) || (currentNum == 0)) {
+				newNumber = possibleNum;
+			} else {
+				newNumber = currentNum;
 			}
         }
         return newNumber;
@@ -80,7 +80,8 @@ public final class Main {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         Long size = Long.parseLong(scanner.nextLine());
         String numbers = scanner.nextLine();
-		String resultado=calculateMinMax(numbers, size, false)+" "+calculateMinMax(numbers, size, true);
-        System.out.print(resultado);
+		Long numeroMinimo = calculateMinMax(numbers, size, false); 
+		Long numeroMaximo = calculateMinMax(numbers, size, true);
+        System.out.print(numeroMaximo + " " + numeroMaximo);
     }
 }
