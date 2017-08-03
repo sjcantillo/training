@@ -79,9 +79,6 @@ public final class Main {
     public static void main(final String[] args) {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         Long size = Long.parseLong(scanner.nextLine());
-        String numbers = scanner.nextLine();
-		Long size = calculateMinMax(numbers, size, false);
-		Long numeroMaximo = calculateMinMax(numbers, size, true);
-		System.out.print(numeroMaximo + " " + numeroMaximo);
+        String numbers = scanner.nextLine();		
     }
 }
