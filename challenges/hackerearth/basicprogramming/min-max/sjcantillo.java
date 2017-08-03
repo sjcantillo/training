@@ -53,7 +53,8 @@ public final class Main {
      */
     public static Long compareNumbers(final Long currentNum,
             final Long possibleNum, final boolean isMax) {
-        Long newNumber;if (isMax) {
+        Long newNumber;
+if (isMax) {
 			if (possibleNum > currentNum) {
 				newNumber = possibleNum;
 			} else {
