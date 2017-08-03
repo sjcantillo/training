@@ -56,7 +56,7 @@ public final class Main {
         Long newNumber;
         if (isMax) {
             if (possibleNum > currentNum) {
-				newNumber = possibleNum;
+	            newNumber = possibleNum;
 			} else {
 				newNumber = currentNum;
 			}
