@@ -62,10 +62,10 @@ public final class Main {
                     }
         } else {
 			if ((possibleNum < currentNum) || (currentNum == 0)) {
-				newNumber = possibleNum;
-			} else {
-				newNumber = currentNum;
-			}
+                         newNumber = possibleNum;
+                    } else {
+                         newNumber = currentNum;
+                    }
         }
         return newNumber;
     }
