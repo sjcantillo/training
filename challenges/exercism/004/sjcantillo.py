@@ -9,11 +9,9 @@ def raindrops(number):
         else:
             divider += 1
         if divider in dictionary:
-            raindropString += dictionary[divider]    
-
+            raindropString += dictionary[divider]
     if len(raindropString) == 0:
         raindropString = str(numberPrincipal)
-    
     return raindropString
-var = int(input())      
+var = int(input())
 print(raindrops(var))
