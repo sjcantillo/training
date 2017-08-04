@@ -1,7 +1,7 @@
 def raindrops(number):
     divider = 2
-    numberPrincipal = number
-    raindropString = ""
+    number_principal = number
+    raindrop_string = ""
     dictionary = {3: "Pling", 5: "Plang", 7: "Plong"}
     while number != 1:
         if number % divider == 0:
@@ -9,12 +9,12 @@ def raindrops(number):
         else:
             divider += 1
         if divider in dictionary:
-            raindropString += dictionary[divider]
-    if len(raindropString) == 0:
-        raindropString = str(numberPrincipal)
-    return raindropString
+            raindrop_string += dictionary[divider]
+    if len(raindrop_string) == 0:
+        raindrop_string = str(number_principal)
+    return raindrop_string
 
 
 
-var = int(input())
-print(raindrops(var))
+var_input = int(input())
+print(raindrops(var_input))
