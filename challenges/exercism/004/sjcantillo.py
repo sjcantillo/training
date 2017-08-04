@@ -15,6 +15,5 @@ def raindrops(number):
     return raindrop_string
 
 
-
-var_input = int(input())
-print(raindrops(var_input))
+number_input = int(input())
+print(raindrops(number_input))
