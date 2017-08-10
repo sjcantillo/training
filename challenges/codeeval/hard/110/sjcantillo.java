@@ -93,7 +93,7 @@ public final class Main {
         alphabetNumbers.put("two", TWO);
         alphabetNumbers.put("three", THREE);
         alphabetNumbers.put("four", FOUR);
-    	alphabetNumbers.put("five", FIVE);
+        alphabetNumbers.put("five", FIVE);
         alphabetNumbers.put("six", SIX);
         alphabetNumbers.put("seven", SEVEN);
         alphabetNumbers.put("eight", EIGHT);
