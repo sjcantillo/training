@@ -88,7 +88,7 @@ public final class Main {
     static {
         alphabetNumbers = new HashMap<String, Integer>();
         alphabetNumbers.put("negative", NEGATIVE);
-    	alphabetNumbers.put("zero", ZERO);
+        alphabetNumbers.put("zero", ZERO);
     	alphabetNumbers.put("one", ONE);
     	alphabetNumbers.put("two", TWO);
     	alphabetNumbers.put("three", THREE);
@@ -167,9 +167,9 @@ public final class Main {
     	try {
 			fileReader = new FileReader(pathFile);
 			bufferedReader = new BufferedReader(fileReader);
-			String currentLine;
-			while ((currentLine = bufferedReader.readLine()) != null) {
-				listLine.add(currentLine.trim());
+			String cLine;
+			while ((cLine = bufferedReader.readLine()) != null) {
+				listLine.add(cLine.trim());
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
