@@ -89,37 +89,37 @@ public final class Main {
         alphabetNumbers = new HashMap<String, Integer>();
         alphabetNumbers.put("negative", NEGATIVE);
         alphabetNumbers.put("zero", ZERO);
-    	alphabetNumbers.put("one", ONE);
-    	alphabetNumbers.put("two", TWO);
-    	alphabetNumbers.put("three", THREE);
-    	alphabetNumbers.put("four", FOUR);
+        alphabetNumbers.put("one", ONE);
+        alphabetNumbers.put("two", TWO);
+        alphabetNumbers.put("three", THREE);
+        alphabetNumbers.put("four", FOUR);
     	alphabetNumbers.put("five", FIVE);
-    	alphabetNumbers.put("six", SIX);
-    	alphabetNumbers.put("seven", SEVEN);
-    	alphabetNumbers.put("eight", EIGHT);
-    	alphabetNumbers.put("nine", NINE);
-    	alphabetNumbers.put("ten", TEN);
-    	alphabetNumbers.put("eleven", ELEVEN);
-    	alphabetNumbers.put("twelve", TWELVE);
-    	alphabetNumbers.put("thirteen", THIRTEEN);
-    	alphabetNumbers.put("fourteen", FOURTEEN);
+        alphabetNumbers.put("six", SIX);
+        alphabetNumbers.put("seven", SEVEN);
+        alphabetNumbers.put("eight", EIGHT);
+        alphabetNumbers.put("nine", NINE);
+        alphabetNumbers.put("ten", TEN);
+        alphabetNumbers.put("eleven", ELEVEN);
+        alphabetNumbers.put("twelve", TWELVE);
+        alphabetNumbers.put("thirteen", THIRTEEN);
+        alphabetNumbers.put("fourteen", FOURTEEN);
     	alphabetNumbers.put("fifteen", FIFTEEN);
-    	alphabetNumbers.put("sixteen", SIXTEEN);
+        alphabetNumbers.put("sixteen", SIXTEEN);
     	alphabetNumbers.put("seventeen", SEVENTEEN);
-    	alphabetNumbers.put("eighteen", EIGHTEEN);
+        alphabetNumbers.put("eighteen", EIGHTEEN);
     	alphabetNumbers.put("nineteen", NINETEEN);
-    	alphabetNumbers.put("twenty", TWENTY);
-    	alphabetNumbers.put("thirty", THIRTY);
-    	alphabetNumbers.put("forty", FORTY);
-    	alphabetNumbers.put("fifty", FIFTY);
-    	alphabetNumbers.put("sixty", SIXTY);
-    	alphabetNumbers.put("seventy", SEVENTY);
-    	alphabetNumbers.put("eighty", EIGHTY);
-    	alphabetNumbers.put("ninety", NINETY);
-    	alphabetNumbers.put("hundred", HUNDRED);
-    	alphabetNumbers.put("thousand", THOUSAND);
-    	alphabetNumbers.put("million", MILLION);
-    }
+        alphabetNumbers.put("twenty", TWENTY);
+        alphabetNumbers.put("thirty", THIRTY);
+        alphabetNumbers.put("forty", FORTY);
+        alphabetNumbers.put("fifty", FIFTY);
+        alphabetNumbers.put("sixty", SIXTY);
+        alphabetNumbers.put("seventy", SEVENTY);
+        alphabetNumbers.put("eighty", EIGHTY);
+        alphabetNumbers.put("ninety", NINETY);
+        alphabetNumbers.put("hundred", HUNDRED);
+        alphabetNumbers.put("thousand", THOUSAND);
+        alphabetNumbers.put("million", MILLION);
+        }
     /**
      * Metodo para transformar el texto en numero.
      *
