@@ -9,52 +9,87 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Clase para resolver el reto text to number
+ * Clase para resolver el reto text to number.
  *
  * @author silvio.cantillo
  * @version 1.0
  */
 public final class Main {
-	private static final Map<String,Integer> ALPHABET_NUMBERS = new HashMap<String, Integer>();
+    /** Alphabet Numbers. */
+    private Map<String, Integer> ALPHABET_NUMBERS = null;
+    private static final Integer NEGATIVE = -1;
+    private static final Integer ZERO = 0;
+    private static final Integer ONE = 1;
+    private static final Integer TWO = 2;
+    private static final Integer THREE = 3;
+    private static final Integer FOUR = 4;
+    private static final Integer FIVE = 5;
+    private static final Integer SIX = 6;
+    private static final Integer SEVEN = 7;
+    private static final Integer EIGHT = 8;
+    private static final Integer NINE = 9;
+    private static final Integer TEN = 10;
+    private static final Integer ELEVEN = 11;
+    private static final Integer TWELVE = 12;
+    private static final Integer THIRTEEN = 13;
+    private static final Integer FOURTEEN = 14;
+    private static final Integer FIFTEEN = 15;
+    private static final Integer SIXTEEN = 16;
+    private static final Integer SEVENTEEN = 17;
+    private static final Integer EIGHTEEN = 18;
+    private static final Integer NINETEEN = 19;
+    private static final Integer TWENTY = 20;
+    private static final Integer THIRTY = 30;
+    private static final Integer FORTY = 40;
+    private static final Integer FIFTY = 50;
+    private static final Integer SIXTY = 60;
+    private static final Integer SEVENTY = 70;
+    private static final Integer EIGHTY = 80;
+    private static final Integer NINETY = 90;
+    private static final Integer HUNDRED = 100;
+    private static final Integer THOUSAND = 1000;
+    private static final Integer MILLION = 1000000;
+
     /** Private constructor. */
     private Main() {
     }
     static{
-    	ALPHABET_NUMBERS.put("negative", -1);
-    	ALPHABET_NUMBERS.put("zero", 0);
-    	ALPHABET_NUMBERS.put("one", 1);
-    	ALPHABET_NUMBERS.put("two", 2);
-    	ALPHABET_NUMBERS.put("three", 3);
-    	ALPHABET_NUMBERS.put("four", 4);
-    	ALPHABET_NUMBERS.put("five", 5);
-    	ALPHABET_NUMBERS.put("six", 6);
-    	ALPHABET_NUMBERS.put("seven", 7);
-    	ALPHABET_NUMBERS.put("eight", 8);
-    	ALPHABET_NUMBERS.put("nine", 9);
-    	ALPHABET_NUMBERS.put("ten", 10);
-    	ALPHABET_NUMBERS.put("eleven", 11);
-    	ALPHABET_NUMBERS.put("twelve", 12);
-    	ALPHABET_NUMBERS.put("thirteen", 13);
-    	ALPHABET_NUMBERS.put("fourteen", 14);
-    	ALPHABET_NUMBERS.put("fifteen", 15);
-    	ALPHABET_NUMBERS.put("sixteen", 16);
-    	ALPHABET_NUMBERS.put("seventeen", 17);
-    	ALPHABET_NUMBERS.put("eighteen", 18);
-    	ALPHABET_NUMBERS.put("nineteen", 19);
-    	ALPHABET_NUMBERS.put("twenty", 20);
-    	ALPHABET_NUMBERS.put("thirty", 30);
-    	ALPHABET_NUMBERS.put("forty", 40);
-    	ALPHABET_NUMBERS.put("fifty", 50);
-    	ALPHABET_NUMBERS.put("sixty", 60);
-    	ALPHABET_NUMBERS.put("seventy", 70);
-    	ALPHABET_NUMBERS.put("eighty", 80);
-    	ALPHABET_NUMBERS.put("ninety", 90);
-    	ALPHABET_NUMBERS.put("hundred", 100);
-    	ALPHABET_NUMBERS.put("thousand", 1000);
-    	ALPHABET_NUMBERS.put("million", 1000000);
+        ALPHABET_NUMBERS = new HashMap<String, Integer>();
+    	ALPHABET_NUMBERS.put("negative", NEGATIVE);
+    	ALPHABET_NUMBERS.put("zero", ZERO);
+    	ALPHABET_NUMBERS.put("one", ONE);
+    	ALPHABET_NUMBERS.put("two", TWO);
+    	ALPHABET_NUMBERS.put("three", THREE);
+    	ALPHABET_NUMBERS.put("four", FOUR);
+    	ALPHABET_NUMBERS.put("five", FIVE);
+    	ALPHABET_NUMBERS.put("six", SIX);
+    	ALPHABET_NUMBERS.put("seven", SEVEN);
+    	ALPHABET_NUMBERS.put("eight", EIGHT);
+    	ALPHABET_NUMBERS.put("nine", NINE);
+    	ALPHABET_NUMBERS.put("ten", TEN);
+    	ALPHABET_NUMBERS.put("eleven", ELEVEN);
+    	ALPHABET_NUMBERS.put("twelve", TWELVE);
+    	ALPHABET_NUMBERS.put("thirteen", THIRTEEN);
+    	ALPHABET_NUMBERS.put("fourteen", FOURTEEN);
+    	ALPHABET_NUMBERS.put("fifteen", FIFTEEN);
+    	ALPHABET_NUMBERS.put("sixteen", SIXTEEN);
+    	ALPHABET_NUMBERS.put("seventeen", SEVENTEEN);
+    	ALPHABET_NUMBERS.put("eighteen", EIGHTEEN);
+    	ALPHABET_NUMBERS.put("nineteen", NINETEEN);
+    	ALPHABET_NUMBERS.put("twenty", TWENTY);
+    	ALPHABET_NUMBERS.put("thirty", THIRTY);
+    	ALPHABET_NUMBERS.put("forty", FORTY);
+    	ALPHABET_NUMBERS.put("fifty", FIFTY);
+    	ALPHABET_NUMBERS.put("sixty", SIXTY);
+    	ALPHABET_NUMBERS.put("seventy", SEVENTY);
+    	ALPHABET_NUMBERS.put("eighty", EIGHTY);
+    	ALPHABET_NUMBERS.put("ninety", NINETY);
+    	ALPHABET_NUMBERS.put("hundred", HUNDRED);
+    	ALPHABET_NUMBERS.put("thousand", THOUSAND);
+    	ALPHABET_NUMBERS.put("million", MILLION);
     }
     /**
-     * Metodo para transformar el texto en numero
+     * Metodo para transformar el texto en numero.
      *
      * @param text
      *            string con el numero en texto
@@ -64,17 +99,17 @@ public final class Main {
     	String[] numbers = text.split(" ");
     	Integer numberAuxuliar = 0;
     	Integer numberFinal = 0;
-    	for(int i =numbers.length - 1 ;i >= 0;i--){
+    	for (int i = numbers.length - 1; i >= 0; i--) {
     		String number = numbers[i].trim();
-    		if(ALPHABET_NUMBERS.containsKey(number)) {
+    		if (ALPHABET_NUMBERS.containsKey(number)) {
     			Integer numberConvert = ALPHABET_NUMBERS.get(number);
-    			if(Integer.toString(numberConvert).length() >=3) {
+    			if (Integer.toString(numberConvert).length() >= 3) {
     				numberAuxuliar = numberConvert;
-    			} else if(numberAuxuliar > 0) {
+    			} else if (numberAuxuliar > 0) {
     				numberAuxuliar *= numberConvert;
     				numberFinal += numberAuxuliar;
     				numberAuxuliar = 0;
-    			} else if(numberConvert <0) {
+    			} else if (numberConvert <0) {
     				numberFinal *= numberConvert;
     			} else {
     				numberFinal += numberConvert;
@@ -87,7 +122,7 @@ public final class Main {
     }
 
     /**
-     * Metodo leer archivo
+     * Metodo leer archivo.
      *
      * @param pathFile
      *            ruta del Archivo
@@ -101,7 +136,7 @@ public final class Main {
 			fileReader = new FileReader(pathFile);
 			bufferedReader = new BufferedReader(fileReader);
 			String currentLine;
-			while((currentLine = bufferedReader.readLine() ) != null) {
+			while (( currentLine = bufferedReader.readLine() ) != null) {
 				listLine.add(currentLine.trim());
 			}
 		} catch (FileNotFoundException e) {
@@ -122,9 +157,9 @@ public final class Main {
         java.util.Scanner scanner = new java.util.Scanner(System.in);
         String pathFile = scanner.nextLine();
         ArrayList<String> listLine =readFile(pathFile);
-        for(String line:listLine) {
+        for (String line: listLine) {
         	Integer number = convertTextToNumber(line);
-        	if(number !=null) {
+        	if(number != null) {
         		System.out.println(number);
         	} else {
         		System.out.println("Number invalid");
