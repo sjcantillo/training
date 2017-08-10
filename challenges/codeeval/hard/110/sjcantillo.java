@@ -129,9 +129,9 @@ public final class Main {
      */
     public static Integer convertTextToNumber(final String text) {
     	String[] numbers = text.split(" ");
-    	Integer numberAuxuliar = 0;
+        Integer numberAuxuliar = 0;
     	Integer numberFinal = 0;
-    	for (int i = numbers.length - 1; i >= 0; i--) {
+        for (int i = numbers.length - 1; i >= 0; i--) {
     		String number = numbers[i].trim();
     		if (alphabetNumbers.containsKey(number)) {
     			Integer numberConvert = alphabetNumbers.get(number);
