@@ -130,26 +130,26 @@ public final class Main {
     public static Integer convertTextToNumber(final String text) {
         String[] numbers = text.split(" ");
         Integer numberAuxuliar = 0;
-    	Integer numberFinal = 0;
+        Integer numberFinal = 0;
         for (int i = numbers.length - 1; i >= 0; i--) {
-    		String number = numbers[i].trim();
-    		if (alphabetNumbers.containsKey(number)) {
-    			Integer numberConvert = alphabetNumbers.get(number);
-    			if (Integer.toString(numberConvert).length() >= THREE) {
-    				numberAuxuliar = numberConvert;
-    			} else if (numberAuxuliar > 0) {
-    				numberAuxuliar *= numberConvert;
-    				numberFinal += numberAuxuliar;
-    				numberAuxuliar = 0;
-    			} else if (numberConvert < 0) {
-    				numberFinal *= numberConvert;
-    			} else {
-    				numberFinal += numberConvert;
-    			}
-    		} else {
-    			return null;
-    		}
-    	}
+            String number = numbers[i].trim();
+            if (alphabetNumbers.containsKey(number)) {
+                Integer numberConvert = alphabetNumbers.get(number);
+                if (Integer.toString(numberConvert).length() >= THREE) {
+                    numberAuxuliar = numberConvert;
+                } else if (numberAuxuliar > 0) {
+                    numberAuxuliar *= numberConvert;
+                    numberFinal += numberAuxuliar;
+                    numberAuxuliar = 0;
+                } else if (numberConvert < 0) {
+                    numberFinal *= numberConvert;
+                } else {
+                    numberFinal += numberConvert;
+                }
+            } else {
+                return null;
+            }
+        }
         return numberFinal;
     }
 
