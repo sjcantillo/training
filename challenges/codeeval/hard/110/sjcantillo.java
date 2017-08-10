@@ -128,7 +128,7 @@ public final class Main {
      * @return retorna el texto convertido a un numero
      */
     public static Integer convertTextToNumber(final String text) {
-    	String[] numbers = text.split(" ");
+        String[] numbers = text.split(" ");
         Integer numberAuxuliar = 0;
     	Integer numberFinal = 0;
         for (int i = numbers.length - 1; i >= 0; i--) {
