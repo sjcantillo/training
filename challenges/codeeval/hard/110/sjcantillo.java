@@ -161,22 +161,22 @@ public final class Main {
      * @return retorna el listado de String de cada linea
      */
     public static ArrayList<String> readFile(final String pathFile) {
-    	BufferedReader bufferedReader = null;
-    	FileReader fileReader = null;
-    	ArrayList<String> listLine = new ArrayList<String>();
-    	try {
-			fileReader = new FileReader(pathFile);
-			bufferedReader = new BufferedReader(fileReader);
-			String cLine;
-			while ((cLine = bufferedReader.readLine()) != null) {
-				listLine.add(cLine.trim());
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    	return listLine;
+        BufferedReader bufferedReader = null;
+        FileReader fileReader = null;
+        ArrayList<String> listLine = new ArrayList<String>();
+        try {
+            fileReader = new FileReader(pathFile);
+            bufferedReader = new BufferedReader(fileReader);
+            String cLine;
+            while ((cLine = bufferedReader.readLine()) != null) {
+                listLine.add(cLine.trim());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listLine;
     }
 
     /**
@@ -190,12 +190,12 @@ public final class Main {
         String pathFile = scanner.nextLine();
         ArrayList<String> listLine = readFile(pathFile);
         for (String line: listLine) {
-        	Integer number = convertTextToNumber(line);
-        	if (number != null) {
-        		System.out.println(number);
-        	} else {
-        		System.out.println("Number invalid");
-        	}
+            Integer number = convertTextToNumber(line);
+            if (number != null) {
+                System.out.println(number);
+            } else {
+                System.out.println("Number invalid");
+            }
         }
     }
 }
