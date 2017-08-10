@@ -103,11 +103,11 @@ public final class Main {
         alphabetNumbers.put("twelve", TWELVE);
         alphabetNumbers.put("thirteen", THIRTEEN);
         alphabetNumbers.put("fourteen", FOURTEEN);
-    	alphabetNumbers.put("fifteen", FIFTEEN);
+        alphabetNumbers.put("fifteen", FIFTEEN);
         alphabetNumbers.put("sixteen", SIXTEEN);
-    	alphabetNumbers.put("seventeen", SEVENTEEN);
+        alphabetNumbers.put("seventeen", SEVENTEEN);
         alphabetNumbers.put("eighteen", EIGHTEEN);
-    	alphabetNumbers.put("nineteen", NINETEEN);
+        alphabetNumbers.put("nineteen", NINETEEN);
         alphabetNumbers.put("twenty", TWENTY);
         alphabetNumbers.put("thirty", THIRTY);
         alphabetNumbers.put("forty", FORTY);
